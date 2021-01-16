@@ -9,6 +9,10 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import 'react-native-gesture-handler'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from './home/HomeScreen.js'
 
 import {
   Header,
@@ -17,17 +21,16 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { create } from 'react-test-renderer';
 
+const Tab = createBottomTabNavigator()
 const App = () => {
   return (
-    <ScrollView>
-        <Text>Some text</Text>
-        <View>
-            <Text>Some more text</Text>
-            <Image source={{uri:'https://reactnative.dev/docs/assets/p_cat2.png'}} style={{width:200,height:200}}/>
-        </View>
-        <TextInput style={{height:40,borderColor:'gray',borderWidth:1}} defaultValue="Type here"/>
-    </ScrollView>
-  );
-};
+      <NavigationContainer>
+          <Tab.Navigator>
+              <Tab.Screen name="Home" component={HomeScreen}/>
+          </Tab.Navigator>
+      </NavigationContainer>
+  )
+}
 export default App;

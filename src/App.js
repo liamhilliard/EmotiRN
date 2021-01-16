@@ -12,7 +12,7 @@ import {
 import 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './home/HomeScreen.js'
+import { HomeScreen } from './home/HomeScreen'
 
 import {
   Header,

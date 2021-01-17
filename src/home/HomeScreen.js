@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, Text, View, Image, TextInput } from 'react-native'
+import { StyleSheet, ScrollView, Text, View, Image, TextInput } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import { EmotionSelectorGroup } from './emotion-selector/EmotionSelectorGroup'
 
@@ -122,14 +122,14 @@ const colors = {
 export function HomeScreen() {
     return (
         <ScrollView>
-            <View style={{marginTop:20, marginBottom:30,justifyContent:'center', alignItems:'center',flex:1}}>
-                <Text style={{ fontFamily:'sans-serif-light',fontSize:50, textAlign:'center'}}>How are you{'\n'}feeling?</Text>
+            <View style={styles.titleContainer}>
+                <Text style={styles.titleText}>How are you{'\n'}feeling?</Text>
             </View>
             {Object.keys(emotionCategories).map(category => {
                 return (
                     <EmotionSelectorGroup
                         key={category}
-                        backgroundColor={colors[category]}
+                        style={{backgroundColor:colors[category]}}
                         emotionCategory={category}
                         emotions={emotionCategories[category]}
                     />
@@ -138,3 +138,18 @@ export function HomeScreen() {
         </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+    titleContainer: {
+        marginTop:20,
+        marginBottom:30,
+        justifyContent:'center',
+        alignItems:'center',
+        flex:1
+    },
+    titleText: {
+        fontFamily:'sans-serif-light',
+        fontSize:50,
+        textAlign:'center'
+    }
+})

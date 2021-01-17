@@ -12,6 +12,7 @@ export default function EmotionSelectorGroup(props) {
                     return (
                         <EmotionSelectorButton
                             categoryColor={props.categoryColor}
+                            onElementSelect={props.onElementSelect}
                             key={name}
                             name={name}
                         />

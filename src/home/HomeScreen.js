@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet, ScrollView, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, ScrollView, Text, View, Button} from 'react-native';
 import EmotionSelectorGroup from './emotion-selector/EmotionSelectorGroup';
 import {emotionCategories} from '../core/emotions';
 
@@ -13,6 +13,7 @@ const colors = {
 };
 
 export function HomeScreen() {
+    const [selectedEmotions, setSelectedEmotions] = useState({});
     return (
         <ScrollView>
             <View style={styles.titleContainer}>
@@ -25,6 +26,12 @@ export function HomeScreen() {
                         categoryColor={colors[category]}
                         emotionCategory={category}
                         emotions={emotionCategories[category]}
+                        onElementSelect={(emotion, isSelected) => {
+                            setSelectedEmotions({
+                                ...selectedEmotions,
+                                [emotion]: isSelected
+                            });
+                        }}
                     />
                 );
             })}

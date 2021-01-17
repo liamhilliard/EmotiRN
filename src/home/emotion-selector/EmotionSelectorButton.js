@@ -16,7 +16,11 @@ export default function EmotionSelectorButton(props) {
     };
 
     return (
-        <Pressable onPress={() => setIsSelected(!isSelected)}>
+        <Pressable
+            onPress={() => {
+                props.onElementSelect(props.name, !isSelected);
+                setIsSelected(!isSelected);
+            }}>
             <Text
                 style={[
                     styles.emotName,

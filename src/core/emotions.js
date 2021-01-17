@@ -1,0 +1,106 @@
+export const emotionCategories = {
+    angry: [
+        'hurt',
+        'devastated',
+        'threatened',
+        'hateful',
+        'resentful',
+        'mad',
+        'furious',
+        'aggressive',
+        'frustrated',
+        'annoyed',
+        'suspicious',
+        'critical',
+        'jealous',
+        'disrespected',
+        'enraged',
+        'infuriated'
+    ],
+
+    disgusted: [
+        'disapproving',
+        'judgemental',
+        'disappointed',
+        'loathing',
+        'awful',
+        'repugnant',
+        'avoidant',
+        'revolted',
+        'detested',
+        'hesitant',
+        'bored',
+        'humiliated'
+    ],
+
+    afraid: [
+        'embarrassed',
+        'ridiculed',
+        'rejected',
+        'submissive',
+        'insecure',
+        'inadequate',
+        'anxious',
+        'insignificant',
+        'scared',
+        'worthless',
+        'worried',
+        'overwhelmed',
+        'frightened',
+        'terrified'
+    ],
+
+    happy: [
+        'optimistic',
+        'inspired',
+        'intimate',
+        'playful',
+        'peaceful',
+        'content',
+        'loving',
+        'powerful',
+        'respected',
+        'proud',
+        'amused',
+        'joyful',
+        'ecstatic',
+        'free',
+        'inquisitive',
+        'confident',
+        'adventurous',
+        'fulfilled',
+        'open'
+    ],
+
+    sad: [
+        'guilty',
+        'abandoned',
+        'despaired',
+        'depressed',
+        'lonely',
+        'indifferent',
+        'distant',
+        'remorseful',
+        'ashamed',
+        'ignored',
+        'withdrawn',
+        'powerless',
+        'vulnerable',
+        'inferior',
+        'empty',
+        'isolated',
+        'apathetic'
+    ],
+
+    surprised: [
+        'startled',
+        'shocked',
+        'confused',
+        'dismayed',
+        'amazed',
+        'disillusioned',
+        'excited',
+        'astonished',
+        'eager'
+    ]
+};

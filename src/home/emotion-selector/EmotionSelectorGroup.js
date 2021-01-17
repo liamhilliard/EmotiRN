@@ -1,34 +1,34 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { EmotionSelectorButton } from './EmotionSelectorButton'
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import EmotionSelectorButton from './EmotionSelectorButton';
 
-export function EmotionSelectorGroup(props) {
+export default function EmotionSelectorGroup(props) {
     return (
-        <View style={[ styles.container, props.style ]}>
-            <Text style={styles.categoryTitle}>{ props.emotionCategory }</Text>
-            
+        <View style={[styles.container, props.style]}>
+            <Text style={styles.categoryTitle}>{props.emotionCategory}</Text>
+
             <View style={styles.emotionsContainer}>
                 {props.emotions.map((name) => {
-                    return (<EmotionSelectorButton key={name} name={name}/>);
+                    return <EmotionSelectorButton key={name} name={name} />;
                 })}
             </View>
         </View>
     );
-};
+}
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:'red',
+        backgroundColor: 'red',
         paddingBottom: 20,
         paddingStart: 10,
         paddingEnd: 20
     },
     categoryTitle: {
-        fontSize:28
+        fontSize: 28
     },
-    emotionsContainer:{
-        flex:1,
-        flexDirection:'row',
-        flexWrap:'wrap'
+    emotionsContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap'
     }
-})
+});

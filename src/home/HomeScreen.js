@@ -4,12 +4,12 @@ import EmotionSelectorGroup from './emotion-selector/EmotionSelectorGroup';
 import {emotionCategories} from '../core/emotions';
 
 const colors = {
-    angry: 'red',
-    disgusted: 'purple',
-    afraid: 'darkorange',
-    happy: 'yellow',
-    sad: 'lightblue',
-    surprised: 'pink'
+    angry: '#f44336',
+    disgusted: '#a13cb2',
+    afraid: '#74ac33',
+    happy: '#f5a620',
+    sad: '#2f97ea',
+    surprised: '#678a9a'
 };
 
 export function HomeScreen() {

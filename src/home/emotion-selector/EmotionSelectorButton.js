@@ -13,8 +13,14 @@ const styles = StyleSheet.create({
     emotName: {
         backgroundColor: 'lightgray',
         color: 'black',
+        fontSize: 16,
         margin: 3,
-        padding: 3,
-        fontSize: 16
+        paddingTop: 3,
+        paddingBottom: 3,
+        paddingStart: 10,
+        paddingEnd: 10,
+        borderRadius: 50,
+        borderColor: 'darkgray',
+        borderWidth: 2
     }
 });

@@ -4,12 +4,20 @@ import EmotionSelectorButton from './EmotionSelectorButton';
 
 export default function EmotionSelectorGroup(props) {
     return (
-        <View style={[styles.container, props.style]}>
+        <View style={styles.container}>
             <Text style={styles.categoryTitle}>{props.emotionCategory}</Text>
 
             <View style={styles.emotionsContainer}>
                 {props.emotions.map((name) => {
-                    return <EmotionSelectorButton key={name} name={name} />;
+                    return (
+                        <EmotionSelectorButton
+                            styles={{
+                                selectorPressColor: props.selectorPressColor
+                            }}
+                            key={name}
+                            name={name}
+                        />
+                    );
                 })}
             </View>
         </View>
@@ -18,7 +26,6 @@ export default function EmotionSelectorGroup(props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'red',
         paddingBottom: 20,
         paddingStart: 10,
         paddingEnd: 20

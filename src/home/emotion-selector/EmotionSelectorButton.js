@@ -11,7 +11,8 @@ export default function EmotionSelectorButton(props) {
 
 const styles = StyleSheet.create({
     emotName: {
-        color: '#4f5a60',
+        color: 'black',
+        textAlign: 'center',
         fontSize: 16,
         margin: 3,
         paddingTop: 3,
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
         paddingStart: 10,
         paddingEnd: 10,
         borderRadius: 50,
-        borderColor: '#4f5a60',
+        borderColor: 'black',
         borderWidth: 2
     }
 });

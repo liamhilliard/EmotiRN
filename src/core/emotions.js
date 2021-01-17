@@ -1,4 +1,21 @@
 export const emotionCategories = {
+    afraid: [
+        'embarrassed',
+        'ridiculed',
+        'rejected',
+        'submissive',
+        'insecure',
+        'inadequate',
+        'anxious',
+        'insignificant',
+        'scared',
+        'worthless',
+        'worried',
+        'overwhelmed',
+        'frightened',
+        'terrified'
+    ],
+
     angry: [
         'hurt',
         'devastated',
@@ -31,23 +48,6 @@ export const emotionCategories = {
         'hesitant',
         'bored',
         'humiliated'
-    ],
-
-    afraid: [
-        'embarrassed',
-        'ridiculed',
-        'rejected',
-        'submissive',
-        'insecure',
-        'inadequate',
-        'anxious',
-        'insignificant',
-        'scared',
-        'worthless',
-        'worried',
-        'overwhelmed',
-        'frightened',
-        'terrified'
     ],
 
     happy: [

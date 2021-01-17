@@ -28,14 +28,22 @@ const styles = StyleSheet.create({
     container: {
         paddingBottom: 20,
         paddingStart: 10,
-        paddingEnd: 20
+        paddingEnd: 20,
+        flex: 1,
+        alignItems: 'center'
     },
     categoryTitle: {
-        fontSize: 28
+        fontSize: 32,
+        //justifyContent: 'center',
+        fontFamily: 'normal',
+        marginBottom: 3
     },
     emotionsContainer: {
         flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        marginBottom: 10
     }
 });

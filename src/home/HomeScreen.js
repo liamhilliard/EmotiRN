@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView, Text, View, Image, TextInput } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
-import { EmotionSelector } from './emotion-selector/EmotionSelector'
+import { EmotionSelectorGroup } from './emotion-selector/EmotionSelectorGroup'
 
 const emotionCategories = {
     'angry': [
@@ -127,7 +127,8 @@ export function HomeScreen() {
             </View>
             {Object.keys(emotionCategories).map(category => {
                 return (
-                    <EmotionSelector
+                    <EmotionSelectorGroup
+                        key={category}
                         backgroundColor={colors[category]}
                         emotionCategory={category}
                         emotions={emotionCategories[category]}

@@ -22,7 +22,7 @@ export function HomeScreen() {
                 return (
                     <EmotionSelectorGroup
                         key={category}
-                        style={{selectorPressColor: colors[category]}}
+                        categoryColor={colors[category]}
                         emotionCategory={category}
                         emotions={emotionCategories[category]}
                     />

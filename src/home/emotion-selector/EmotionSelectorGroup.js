@@ -11,9 +11,7 @@ export default function EmotionSelectorGroup(props) {
                 {props.emotions.map((name) => {
                     return (
                         <EmotionSelectorButton
-                            styles={{
-                                selectorPressColor: props.selectorPressColor
-                            }}
+                            categoryColor={props.categoryColor}
                             key={name}
                             name={name}
                         />
@@ -33,16 +31,14 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     categoryTitle: {
-        fontSize: 32,
-        //justifyContent: 'center',
-        fontFamily: 'normal',
+        fontSize: 42,
+        fontFamily: 'sans-serif-light',
         marginBottom: 3
     },
     emotionsContainer: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
         flexWrap: 'wrap',
         marginBottom: 10
     }

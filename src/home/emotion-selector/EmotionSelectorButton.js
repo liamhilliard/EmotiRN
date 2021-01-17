@@ -1,26 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, Pressable} from 'react-native';
 
 export default function EmotionSelectorButton(props) {
+    const [isSelected, setIsSelected] = useState(false);
+
+    const selectedStyles = {
+        color: 'white',
+        borderColor: props.categoryColor,
+        backgroundColor: props.categoryColor
+    };
+    const unselectedStyles = {
+        color: 'black',
+        borderColor: 'black',
+        backgroundColor: 'transparent'
+    };
+
     return (
-        <Pressable>
-            <Text style={styles.emotName}>{props.name}</Text>
+        <Pressable onPress={() => setIsSelected(!isSelected)}>
+            <Text
+                style={[
+                    styles.emotName,
+                    isSelected ? selectedStyles : unselectedStyles
+                ]}>
+                {props.name}
+            </Text>
         </Pressable>
     );
 }
 
 const styles = StyleSheet.create({
     emotName: {
-        color: 'black',
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: 18,
         margin: 3,
         paddingTop: 3,
         paddingBottom: 3,
         paddingStart: 10,
         paddingEnd: 10,
         borderRadius: 50,
-        borderColor: 'black',
-        borderWidth: 2
+        borderWidth: 1.5
     }
 });

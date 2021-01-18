@@ -23,13 +23,13 @@ export default function AddEmotionalStateScreen({route}) {
                 <Text style={styles.textInputLabel}>
                     Describe what you're feeling
                 </Text>
-                <TextInput style={styles.textInputBox} />
+                <TextInput multiline={true} style={styles.textInputBox} />
             </View>
             <View style={styles.textInput}>
                 <Text style={styles.textInputLabel}>
                     What caused you to feel this way?
                 </Text>
-                <TextInput style={styles.textInputBox} />
+                <TextInput multiline={true} style={styles.textInputBox} />
             </View>
             <View style={styles.textInput}>
                 <Text style={styles.textInputLabel}>
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
     },
     textInput: {
         paddingBottom: 20,
-        paddingStart: 10,
-        paddingEnd: 20,
+        paddingStart: 15,
+        paddingEnd: 15,
         flex: 1
     },
     textInputLabel: {
@@ -79,6 +79,14 @@ const styles = StyleSheet.create({
         marginTop: 8
     },
     textInputBox: {
-
+        //backgroundColor: 'lightgray',
+        height: 120,
+        fontSize: 18,
+        paddingStart: 8,
+        paddingEnd: 5,
+        textAlignVertical: 'top',
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: 'lightgray'
     }
 });

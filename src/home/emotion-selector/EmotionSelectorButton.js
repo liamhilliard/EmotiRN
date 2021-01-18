@@ -3,7 +3,6 @@ import {StyleSheet, Text, Pressable} from 'react-native';
 
 export default function EmotionSelectorButton(props) {
     const [isSelected, setIsSelected] = useState(false);
-
     const selectedStyles = {
         color: 'white',
         borderColor: props.categoryColor,
@@ -18,7 +17,7 @@ export default function EmotionSelectorButton(props) {
     return (
         <Pressable
             onPress={() => {
-                props.onElementSelect(props.name, !isSelected);
+                props.onSelect(props.name, !isSelected);
                 setIsSelected(!isSelected);
             }}>
             <Text

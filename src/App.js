@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from './home/HomeScreen';
+import HomeScreen from './home/HomeScreen';
 
 const Tab = createBottomTabNavigator();
 const App = () => {

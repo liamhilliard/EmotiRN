@@ -7,6 +7,15 @@ const groups = Object.freeze({
     SURPRISED: 6
 });
 
+const colors = {
+    [groups.ANGRY]: '#f44336',
+    [groups.AFRAID]: '#74ac33',
+    [groups.DISGUSTED]: '#a13cb2',
+    [groups.HAPPY]: '#f5a620',
+    [groups.SAD]: '#2f97ea',
+    [groups.SURPRISED]: '#678a9a'
+};
+
 const emotions = Object.freeze({
     //angry
     aggressive: groups.ANGRY,
@@ -108,4 +117,4 @@ const emotions = Object.freeze({
     startled: groups.SURPRISED
 });
 
-export {emotions, groups};
+export {emotions, groups, colors};

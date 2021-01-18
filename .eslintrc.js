@@ -4,6 +4,7 @@ module.exports = {
     'rules': {
         'semi': [2, 'always'],
         'indent': ['error', 4],
-        'comma-dangle': ['error', 'never']
+        'comma-dangle': ['error', 'never'],
+        'prettier/prettier': 'warn'
     }
 };

@@ -39,7 +39,7 @@ export default function AddEmotionalStateScreen({route}) {
                 <TextInput style={styles.textInputBox} />
             </View>
 
-            <Button title="Add" onPress={() => {}} />
+            <Button title="Submit" onPress={() => {}} />
         </ScrollView>
     );
 }

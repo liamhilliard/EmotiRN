@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     container: {
         paddingBottom: 20,
         paddingStart: 10,
-        paddingEnd: 20,
+        paddingEnd: 10,
         flex: 1,
         alignItems: 'center'
     },

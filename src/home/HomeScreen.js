@@ -1,10 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import EmotionSelectorScreen from './emotion-selector/EmotionSelectorScreen';
-import AddEmotionalStateScreen from './emotional-state/AddEmotionalStateScreen';
+import EmotionSelectorScreen from './EmotionSelectorScreen';
+import AddEmotionalStateScreen from './AddEmotionalStateScreen';
 
 const Stack = createStackNavigator();
-
+ 
 export default function HomeScreen() {
     return (
         <Stack.Navigator>
@@ -16,6 +16,7 @@ export default function HomeScreen() {
             <Stack.Screen
                 name="Add Emotional State"
                 component={AddEmotionalStateScreen}
+                options={{headerShown: false}}
             />
         </Stack.Navigator>
     );

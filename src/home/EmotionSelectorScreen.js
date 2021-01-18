@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, ScrollView, Text, View, Button} from 'react-native';
-import EmotionSelectorGroup from './EmotionSelectorGroup';
-import {emotions, groups, colors} from '../../core/emotions';
+import EmotionSelectorGroup from './emotion-selector/EmotionSelectorGroup';
+import {emotions, groups, colors} from '../core/emotions';
 
 export default function EmotionSelectorScreen({navigation, route}) {
     const [selectedEmotions, setSelectedEmotions] = useState({});
@@ -36,9 +36,8 @@ export default function EmotionSelectorScreen({navigation, route}) {
                         // eslint-disable-next-line prettier/prettier
                         Object.keys(selectedEmotions)
                     )
-                }>
-                Continue
-            </Button>
+                }
+            />
         </ScrollView>
     );
 }

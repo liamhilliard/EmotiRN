@@ -34,7 +34,7 @@ export default function EmotionSelectorScreen({navigation, route}) {
                     navigation.navigate(
                         'Add Emotional State',
                         // eslint-disable-next-line prettier/prettier
-                        {...selectedEmotions}
+                        Object.keys(selectedEmotions)
                     )
                 }>
                 Continue

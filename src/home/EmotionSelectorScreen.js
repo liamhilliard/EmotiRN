@@ -15,6 +15,7 @@ export default function EmotionSelectorScreen({navigation, route}) {
             {Object.keys(groups).map((group) => {
                 return (
                     <EmotionSelectorGroup
+                        key={group}
                         title={group.toLowerCase()}
                         children={Object.keys(emotions)
                             .filter(

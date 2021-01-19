@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, Pressable} from 'react-native';
 
-export default function EmotionSelectorButton(props) {
-    const [isSelected, setIsSelected] = useState(false);
+export default function SelectorButton({
+    name,
+    selectedColor,
+    selected,
+    onPress,
+    style
+}) {
     const selectedStyles = {
         color: 'white',
-        borderColor: props.categoryColor,
-        backgroundColor: props.categoryColor
+        borderColor: selectedColor,
+        backgroundColor: selectedColor
     };
     const unselectedStyles = {
         color: 'black',
@@ -15,17 +20,14 @@ export default function EmotionSelectorButton(props) {
     };
 
     return (
-        <Pressable
-            onPress={() => {
-                props.onSelect(props.name, !isSelected);
-                setIsSelected(!isSelected);
-            }}>
+        <Pressable onPress={onPress}>
             <Text
                 style={[
+                    style,
                     styles.emotName,
-                    isSelected ? selectedStyles : unselectedStyles
+                    selected ? selectedStyles : unselectedStyles
                 ]}>
-                {props.name}
+                {name}
             </Text>
         </Pressable>
     );

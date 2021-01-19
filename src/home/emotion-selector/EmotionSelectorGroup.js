@@ -1,24 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import EmotionSelectorButton from './EmotionSelectorButton';
 
-export default function EmotionSelectorGroup(props) {
+export default function EmotionSelectorGroup({children, title}) {
     return (
         <View style={styles.container}>
-            <Text style={styles.categoryTitle}>{props.emotionCategory}</Text>
+            <Text style={styles.title}>{title}</Text>
 
-            <View style={styles.emotionsContainer}>
-                {props.emotions.map((name) => {
-                    return (
-                        <EmotionSelectorButton
-                            categoryColor={props.categoryColor}
-                            onSelect={props.onSelect}
-                            key={name}
-                            name={name}
-                        />
-                    );
-                })}
-            </View>
+            <View style={styles.childContainer}>{children}</View>
         </View>
     );
 }
@@ -31,12 +19,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center'
     },
-    categoryTitle: {
+    title: {
         fontSize: 42,
         fontFamily: 'sans-serif-light',
         marginBottom: 3
     },
-    emotionsContainer: {
+    childContainer: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',

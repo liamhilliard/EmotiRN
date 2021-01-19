@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, ScrollView, Text, View, TextInput, Button} from 'react-native';
-import EmotionPill from './emotional-state/EmotionPill';
+import SelectorButton from './emotion-selector/SelectorButton';
 import {emotions, groups, colors} from '../core/emotions';
 
 export default function AddEmotionalStateScreen({route}) {
@@ -10,10 +10,11 @@ export default function AddEmotionalStateScreen({route}) {
                 <View style={styles.emotionPillsContainer}>
                     {route.params.map((emotion) => {
                         return (
-                            <EmotionPill
+                            <SelectorButton
                                 key={emotion}
                                 name={emotion}
-                                categoryColor={colors[emotions[emotion]]}
+                                selectedColor={colors[emotions[emotion]]}
+                                selected={true}
                             />
                         );
                     })}

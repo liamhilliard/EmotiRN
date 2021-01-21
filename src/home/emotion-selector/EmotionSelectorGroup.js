@@ -3,10 +3,10 @@ import {StyleSheet, Text, View} from 'react-native';
 
 export default function EmotionSelectorGroup({children, title, selectedColor}) {
     return (
-        <View style={[styles.container, {backgroundColor: selectedColor}]}>
-            <Text style={styles.title}>{title}</Text>
+        <View style={styles.container}>
+            <Text style={[styles.title, {color:selectedColor}]}>{title}</Text>
 
-            <View style={styles.childContainer}>{children}</View>
+            <View style={[styles.childContainer, {backgroundColor: selectedColor}]}>{children}</View>
         </View>
     );
 }
@@ -17,13 +17,7 @@ const styles = StyleSheet.create({
         paddingEnd: 8,
         paddingTop: 8,
         paddingBottom: 10,
-        marginTop: 20,
-        borderRadius: 20,
-        shadowColor: 'black',
-        shadowOffset: {width: 1, height: 3},
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5
+        marginTop: 20
     },
     title: {
         fontSize: 32,
@@ -36,6 +30,13 @@ const styles = StyleSheet.create({
     childContainer: {
         flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        shadowColor: 'black',
+        shadowOffset: {width: 1, height: 3},
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        borderRadius: 20,
+        padding: 5
     }
 });

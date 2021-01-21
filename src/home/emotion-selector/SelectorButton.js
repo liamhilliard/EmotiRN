@@ -12,11 +12,13 @@ export default function SelectorButton({
     const colors = selected
         ? {
               color: selectedColor,
-              backgroundColor: 'white'
+              backgroundColor: 'white',
+              borderColor: 'white'
           }
         : {
               color: 'white',
-              backgroundColor: 'transparent'
+              backgroundColor: selectedColor,
+              borderColor: 'white'
           };
 
     return (
@@ -55,8 +57,7 @@ const styles = StyleSheet.create({
         paddingStart: 8,
         paddingEnd: 10,
         borderRadius: 14,
-        borderWidth: 2,
-        borderColor: 'white'
+        borderWidth: 2
     },
 
     txt: {

@@ -20,29 +20,42 @@ export default function SelectorButton({
     };
 
     return (
-        <Pressable onPress={onPress}>
-            <Text
-                style={[
-                    style,
-                    styles.emotName,
-                    selected ? selectedStyles : unselectedStyles
-                ]}>
-                {name}
+        <Pressable
+            onPress={onPress}
+            style={[
+                styles.btn,
+                style,
+                selected ? selectedStyles : unselectedStyles
+            ]}>
+            <Text style={[styles.txt, styles.icon, style]}>
+                {selected ? '－' : '＋'}
             </Text>
+            <Text style={[styles.txt]}>{name}</Text>
         </Pressable>
     );
 }
 
 const styles = StyleSheet.create({
-    emotName: {
-        textAlign: 'center',
-        fontSize: 18,
+    btn: {
+        flexDirection: 'row',
         margin: 3,
-        paddingTop: 3,
-        paddingBottom: 3,
-        paddingStart: 10,
+        paddingTop: 1,
+        paddingBottom: 4,
+        paddingStart: 8,
         paddingEnd: 10,
-        borderRadius: 50,
-        borderWidth: 1.5
+        borderRadius: 14,
+        borderWidth: 2
+    },
+
+    txt: {
+        textAlign: 'center',
+        fontSize: 18
+    },
+
+    icon: {
+        marginTop: 5,
+        marginEnd: 5,
+        fontSize: 14,
+        fontWeight: 'bold'
     }
 });

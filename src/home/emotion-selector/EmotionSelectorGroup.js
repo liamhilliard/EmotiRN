@@ -15,9 +15,7 @@ const styles = StyleSheet.create({
     container: {
         paddingBottom: 20,
         paddingStart: 10,
-        paddingEnd: 10,
-        flex: 1,
-        alignItems: 'center'
+        paddingEnd: 10
     },
     title: {
         fontSize: 42,
@@ -27,7 +25,6 @@ const styles = StyleSheet.create({
     childContainer: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
         flexWrap: 'wrap',
         marginBottom: 10
     }

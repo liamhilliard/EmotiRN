@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import {StyleSheet, Text, Pressable} from 'react-native';
 
@@ -8,29 +9,24 @@ export default function SelectorButton({
     onPress,
     style
 }) {
-    const selectedStyles = {
-        color: 'white',
-        borderColor: selectedColor,
-        backgroundColor: selectedColor
-    };
-    const unselectedStyles = {
-        color: 'black',
-        borderColor: 'black',
-        backgroundColor: 'transparent'
-    };
+    const colors = selected
+        ? {
+              color: 'white',
+              borderColor: selectedColor,
+              backgroundColor: selectedColor
+          }
+        : {
+              color: 'black',
+              borderColor: 'black',
+              backgroundColor: 'transparent'
+          };
 
     return (
-        <Pressable
-            onPress={onPress}
-            style={[
-                styles.btn,
-                style,
-                selected ? selectedStyles : unselectedStyles
-            ]}>
-            <Text style={[styles.txt, styles.icon, style]}>
+        <Pressable onPress={onPress} style={[styles.btn, style, colors]}>
+            <Text style={[styles.txt, styles.icon, style, colors]}>
                 {selected ? '－' : '＋'}
             </Text>
-            <Text style={[styles.txt]}>{name}</Text>
+            <Text style={[styles.txt, colors]}>{name}</Text>
         </Pressable>
     );
 }

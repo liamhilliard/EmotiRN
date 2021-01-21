@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         paddingEnd: 10
     },
     title: {
-        fontSize: 42,
+        fontSize: 32,
+        fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
         marginBottom: 3
     },

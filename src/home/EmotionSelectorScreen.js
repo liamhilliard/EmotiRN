@@ -8,13 +8,14 @@ export default function EmotionSelectorScreen({navigation, route}) {
     const [selectedEmotions, setSelectedEmotions] = useState({});
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>How are you{'\n'}feeling?</Text>
             </View>
             {Object.keys(groups).map((group) => {
                 return (
                     <EmotionSelectorGroup
+                        selectedColor={colors[groups[group]]}
                         key={group}
                         title={group.toLowerCase()}
                         children={Object.keys(emotions)
@@ -55,6 +56,9 @@ export default function EmotionSelectorScreen({navigation, route}) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        padding: '4%'
+    },
     titleContainer: {
         marginTop: 20,
         marginBottom: 30,

@@ -1,12 +1,57 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faChevronUp, faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import React, {useState, useEffect, useRef} from 'react';
+import {StyleSheet, Text, View, Pressable, Animated, Easing} from 'react-native';
+import { emotions } from '../../core/emotions';
 
 export default function EmotionSelectorGroup({children, title, selectedColor}) {
+    const [isOpen, setIsOpen] = useState(false);
+    const animHeight = useRef(new Animated.Value(0)).current;
+    //const [childHeight, setChildHeight] = useState(0);
+    const toggleOpen = () => {
+        setIsOpen(!isOpen);
+    };
+
+    useEffect(() => {
+        if (isOpen) {
+            Animated.timing(animHeight, {
+                toValue: 1,
+                duration: 200,
+                easing: Easing.linear,
+                useNativeDriver: false
+            }).start();
+        } else {
+            Animated.timing(animHeight, {
+                toValue: 0,
+                duration: 100,
+                easing: Easing.linear,
+                useNativeDriver: false
+            }).start();
+        }
+    }, [animHeight, isOpen]);
+
+    const maxHeight = animHeight.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, 200]
+    });
+
     return (
         <View style={styles.container}>
-            <Text style={[styles.title, {color:selectedColor}]}>{title}</Text>
-
-            <View style={[styles.childContainer, {backgroundColor: selectedColor}]}>{children}</View>
+            <Pressable style={styles.titleContainer} onPress={toggleOpen}>
+                <Text style={[styles.titleText, {color: selectedColor}]}>
+                    {title}
+                </Text>
+                <View style={styles.titleIcon}>
+                    <FontAwesomeIcon
+                        color={selectedColor}
+                        size={25}
+                        icon={isOpen ? faChevronUp : faChevronDown}
+                    />
+                </View>
+            </Pressable>
+            <Animated.View style={[styles.childContainer, {maxHeight}]}>
+                {children}
+            </Animated.View>
         </View>
     );
 }
@@ -19,7 +64,12 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
         marginTop: 20
     },
-    title: {
+    titleContainer: {
+        flex: 1,
+        flexDirection: 'row'
+        //justifyContent: 'space-between'
+    },
+    titleText: {
         fontSize: 32,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
@@ -27,16 +77,13 @@ const styles = StyleSheet.create({
         marginStart: 4,
         color: 'white'
     },
+    titleIcon: {
+        justifyContent: 'center'
+    },
     childContainer: {
+        overflow: 'hidden',
         flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        shadowColor: 'black',
-        shadowOffset: {width: 1, height: 3},
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-        elevation: 5,
-        borderRadius: 20,
-        padding: 5
+        flexWrap: 'wrap'
     }
 });

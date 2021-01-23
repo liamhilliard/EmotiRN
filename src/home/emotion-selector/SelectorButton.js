@@ -11,37 +11,24 @@ export default function SelectorButton({
 }) {
     const colors = selected
         ? {
-              color: selectedColor,
-              backgroundColor: 'white',
-              borderColor: 'white'
-          }
-        : {
               color: 'white',
               backgroundColor: selectedColor,
-              borderColor: 'white'
+              borderColor: selectedColor
+          }
+        : {
+              color: selectedColor,
+              backgroundColor: 'transparent',
+              borderColor: selectedColor
           };
+
+    const elevation = selected ? {elevation: 5} : {elevation: 0};
 
     return (
         <Pressable
             onPress={onPress}
-            style={[
-                styles.btn,
-                style,
-                colors,
-                selected
-                    ? {
-                          shadowColor: 'black',
-                          shadowOffset: {width: 2, height: 3},
-                          shadowOpacity: 0.25,
-                          shadowRadius: 3.84,
-                          elevation: 5
-                      }
-                    : {
-                          shadowOpacity: 0
-                      }
-            ]}>
+            style={[styles.btn, style, colors, elevation]}>
             <Text style={[styles.txt, styles.icon, style, colors]}>
-                {selected ? '－' : '＋'}
+                {onPress && (selected ? '－' : '＋')}
             </Text>
             <Text style={[styles.txt, colors]}>{name}</Text>
         </Pressable>
@@ -59,12 +46,10 @@ const styles = StyleSheet.create({
         borderRadius: 14,
         borderWidth: 2
     },
-
     txt: {
         textAlign: 'center',
         fontSize: 18
     },
-
     icon: {
         marginTop: 5,
         marginEnd: 5,

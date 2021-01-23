@@ -10,7 +10,7 @@ export default function EmotionSelectorScreen({navigation, route}) {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.titleContainer}>
-                <Text style={styles.titleText}>How are you{'\n'}feeling?</Text>
+                <Text style={styles.titleText}>How do you feel?</Text>
             </View>
             {Object.keys(groups).map((group) => {
                 return (
@@ -60,15 +60,14 @@ const styles = StyleSheet.create({
         padding: '4%'
     },
     titleContainer: {
-        marginTop: 20,
-        marginBottom: 30,
+        marginTop: 10,
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1
     },
     titleText: {
-        fontFamily: 'sans-serif-light',
-        fontSize: 50,
+        fontFamily: 'sans-serif',
+        fontSize: 48,
         textAlign: 'center'
     }
 });

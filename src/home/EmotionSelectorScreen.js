@@ -61,13 +61,12 @@ const styles = StyleSheet.create({
     },
     titleContainer: {
         marginTop: 10,
+        marginBottom: 15,
         justifyContent: 'center',
-        alignItems: 'center',
         flex: 1
     },
     titleText: {
         fontFamily: 'sans-serif',
-        fontSize: 48,
-        textAlign: 'center'
+        fontSize: 34
     }
 });

@@ -57,17 +57,10 @@ export default function EmotionSelectorGroup({children, title, selectedColor}) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        paddingStart: 8,
-        paddingEnd: 8,
-        paddingTop: 8,
-        paddingBottom: 10,
-        marginTop: 20
-    },
+    container: {},
     titleContainer: {
         flex: 1,
         flexDirection: 'row'
-        //justifyContent: 'space-between'
     },
     titleText: {
         fontSize: 32,

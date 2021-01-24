@@ -21,7 +21,7 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
     useEffect(() => {
         Animated.timing(animHeight, {
             toValue: isOpen ? 1 : 0,
-            duration: 200,
+            duration: 300,
             easing: Easing.linear,
             useNativeDriver: false
         }).start();
@@ -29,7 +29,7 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
 
     const maxHeight = animHeight.interpolate({
         inputRange: [0, 1],
-        outputRange: [0, 200]
+        outputRange: [0, 300]
     });
 
     return (
@@ -44,9 +44,13 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
                     />
                 </View>
             </Pressable>
-            <View>
+            <Animated.View
+                style={[
+                    styles.childContainer,
+                    {maxHeight: isOpen ? maxHeight : 'auto'}
+                ]}>
                 {options
-                    .filter((opt) => values[opt])
+                    .filter((opt) => values[opt] || isOpen)
                     .map((opt) => {
                         return (
                             <SelectorButton
@@ -56,32 +60,7 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
                                 selected={values[opt]}
                                 onPress={() => {
                                     const change = {[opt]: !values[opt]};
-                                    setValues({
-                                        ...values,
-                                        ...change
-                                    });
-                                    onUpdate(change);
-                                }}
-                            />
-                        );
-                    })}
-            </View>
-            <Animated.View style={[styles.childContainer, {maxHeight}]}>
-                {options
-                    .filter((opt) => !values[opt])
-                    .map((opt) => {
-                        return (
-                            <SelectorButton
-                                key={opt}
-                                name={opt}
-                                selectedColor={color}
-                                selected={values[opt]}
-                                onPress={() => {
-                                    const change = {[opt]: !values[opt]};
-                                    setValues({
-                                        ...values,
-                                        ...change
-                                    });
+                                    setValues({...values, ...change});
                                     onUpdate(change);
                                 }}
                             />
@@ -99,7 +78,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     titleText: {
-        fontSize: 32,
+        fontSize: 28,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
         marginBottom: 4,

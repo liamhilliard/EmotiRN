@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
     },
     txt: {
         textAlign: 'center',
-        fontSize: 18
+        fontSize: 16
     },
     icon: {
         marginTop: 5,
         marginEnd: 5,
-        fontSize: 14,
+        fontSize: 11,
         fontWeight: 'bold'
     }
 });

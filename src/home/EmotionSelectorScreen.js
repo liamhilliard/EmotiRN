@@ -16,7 +16,6 @@ export default function EmotionSelectorScreen({navigation, route}) {
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>How do you feel?</Text>
             </View>
-            <Text>{JSON.stringify(selected)}</Text>
             {Object.keys(groups).map((groupName) => {
                 const currentGroup = groups[groupName];
                 return (
@@ -28,10 +27,7 @@ export default function EmotionSelectorScreen({navigation, route}) {
                             .filter((emotion) => emotion.group === currentGroup)
                             .map((emotion) => emotion.name)}
                         onUpdate={(changes) => {
-                            setSelected({
-                                ...selected,
-                                ...changes
-                            });
+                            setSelected({...selected, ...changes});
                         }}
                     />
                 );

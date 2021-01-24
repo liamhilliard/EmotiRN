@@ -30,7 +30,7 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
 
     const maxHeight = animHeight.interpolate({
         inputRange: [0, 1],
-        outputRange: [0, 300]
+        outputRange: [6, 300]
     });
 
     return (
@@ -104,9 +104,9 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        paddingTop: 3,
         paddingStart: 5,
         paddingEnd: 5,
+        paddingTop: 3,
         paddingBottom: 3
     }
 });

@@ -12,7 +12,7 @@ export default function EmotionSelectorScreen({navigation, route}) {
     const [selected, setSelected] = useState({});
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView>
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>How do you feel?</Text>
             </View>
@@ -47,11 +47,10 @@ export default function EmotionSelectorScreen({navigation, route}) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        padding: '3%'
-    },
     titleContainer: {
         marginTop: 10,
+        marginStart: 15,
+        marginEnd: 15,
         marginBottom: 15,
         justifyContent: 'center',
         flex: 1

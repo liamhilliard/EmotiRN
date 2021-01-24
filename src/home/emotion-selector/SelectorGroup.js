@@ -75,6 +75,8 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
 const styles = StyleSheet.create({
     container: {
         elevation: 3,
+        marginStart: 15,
+        marginEnd: 15,
         marginBottom: 15,
         borderRadius: 13,
         backgroundColor: 'white'
@@ -83,8 +85,8 @@ const styles = StyleSheet.create({
         flex: 1,
         borderTopStartRadius: 13,
         borderTopEndRadius: 13,
-        paddingStart: 10,
-        paddingEnd: 10,
+        paddingStart: 15,
+        paddingEnd: 15,
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: 'white'

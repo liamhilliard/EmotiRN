@@ -10,7 +10,7 @@ import SelectorButton from './SelectorButton';
     TODO: Conditionally render the entire selector view to avoid ugly padding
 */
 
-export default function SelectorGroup({selectorOptions, onUpdate, title, color}) {
+export default function SelectorGroup({selectorOptions, onUpdate, title, color, icon}) {
     const [isOpen, setIsOpen] = useState(false);
     const animHeight = useRef(new Animated.Value(0)).current;
     const [options] = useState([...selectorOptions]);
@@ -35,8 +35,22 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
 
     return (
         <View style={styles.container}>
-            <Pressable style={[styles.titleContainer, {elevation: isOpen ? 3 : 0, borderBottomStartRadius: isOpen?0:13, borderBottomEndRadius: isOpen?0:13}]} onPress={toggleOpen}>
-                <Text style={[styles.titleText, {color}]}>{title}</Text>
+            <Pressable
+                style={[
+                    styles.titleContainer,
+                    {
+                        elevation: isOpen ? 3 : 0,
+                        borderBottomStartRadius: isOpen ? 0 : 13,
+                        borderBottomEndRadius: isOpen ? 0 : 13
+                    }
+                ]}
+                onPress={toggleOpen}>
+                <View style={styles.title}>
+                    <View style={styles.titleIcon}>
+                        <FontAwesomeIcon color={color} size={32} icon={icon} />
+                    </View>
+                    <Text style={[styles.titleText, {color}]}>{title}</Text>
+                </View>
                 <View style={styles.titleIcon}>
                     <FontAwesomeIcon
                         color={color}
@@ -82,19 +96,24 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     titleContainer: {
-        flex: 1,
         borderTopStartRadius: 13,
         borderTopEndRadius: 13,
-        paddingStart: 15,
+        paddingStart: 8,
         paddingEnd: 15,
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: 'white'
     },
+    title: {
+        flex: 1,
+        flexDirection: 'row'
+    },
     titleText: {
-        fontSize: 30,
+        fontSize: 28,
         fontWeight: 'bold',
-        fontFamily: 'sans-serif-light'
+        fontFamily: 'sans-serif',
+        marginStart: 10,
+        marginTop: 3
     },
     titleIcon: {
         justifyContent: 'center',

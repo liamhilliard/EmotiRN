@@ -12,17 +12,19 @@ export default function EmotionSelectorScreen({navigation, route}) {
     const [selected, setSelected] = useState({});
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <View style={styles.titleContainer}>
-                <Text style={styles.titleText}>How do you feel?</Text>
+                <Text style={styles.titleText}>How are you feeling?</Text>
             </View>
             {Object.keys(groups).map((groupName) => {
                 const currentGroup = groups[groupName];
+                const formattedGroupName = groupName.charAt(0) + groupName.slice(1).toLowerCase();
                 return (
                     <SelectorGroup
                         color={currentGroup.color}
                         key={groupName}
-                        title={groupName.toLowerCase()}
+                        title={formattedGroupName}
+                        icon={currentGroup.icon}
                         selectorOptions={emotions
                             .filter((emotion) => emotion.group === currentGroup)
                             .map((emotion) => emotion.name)}
@@ -47,16 +49,19 @@ export default function EmotionSelectorScreen({navigation, route}) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#f0eeeb'
+    },
     titleContainer: {
-        marginTop: 10,
+        marginTop: 30,
         marginStart: 15,
         marginEnd: 15,
-        marginBottom: 15,
+        marginBottom: 30,
         justifyContent: 'center',
         flex: 1
     },
     titleText: {
         fontFamily: 'sans-serif',
-        fontSize: 34
+        fontSize: 38
     }
 });

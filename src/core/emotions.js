@@ -1,10 +1,12 @@
+import {faAngry,faFlushed,faFrown,faFrownOpen,faSadCry,faSadTear,faSmile,faSurprise,faTired} from '@fortawesome/free-regular-svg-icons';
+
 const groups = Object.freeze({
-    AFRAID: {color: '#74ac33'},
-    ANGRY: {color: '#f44336'},
-    DISGUSTED: {color: '#a13cb2'},
-    HAPPY: {color: '#f5a620'},
-    SAD: {color: '#2f97ea'},
-    SURPRISED: {color: '#678a9a'}
+    AFRAID: {color: '#74ac33', icon: faFlushed},
+    ANGRY: {color: '#f44336', icon: faAngry},
+    DISGUSTED: {color: '#a13cb2', icon: faTired},
+    HAPPY: {color: '#f5a620', icon: faSmile},
+    SAD: {color: '#2f97ea', icon: faFrown},
+    SURPRISED: {color: '#678a9a', icon: faSurprise}
 });
 
 const emotions = [

@@ -4,7 +4,7 @@ import EmotionSelectorScreen from './EmotionSelectorScreen';
 import AddEmotionalStateScreen from './AddEmotionalStateScreen';
 
 const Stack = createStackNavigator();
- 
+
 export default function HomeScreen() {
     return (
         <Stack.Navigator>

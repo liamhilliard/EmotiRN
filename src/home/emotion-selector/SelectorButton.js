@@ -21,7 +21,7 @@ export default function SelectorButton({
               borderColor: selectedColor
           };
 
-    const elevation = selected ? {elevation: 5} : {elevation: 0};
+    const elevation = selected ? {elevation: 3} : {elevation: 0};
 
     return (
         <Pressable

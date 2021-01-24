@@ -1,6 +1,6 @@
 const groups = Object.freeze({
-    AFRAID: {color: '#f44336'},
-    ANGRY: {color: '#74ac33'},
+    AFRAID: {color: '#74ac33'},
+    ANGRY: {color: '#f44336'},
     DISGUSTED: {color: '#a13cb2'},
     HAPPY: {color: '#f5a620'},
     SAD: {color: '#2f97ea'},

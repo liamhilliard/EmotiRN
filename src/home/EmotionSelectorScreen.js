@@ -48,7 +48,7 @@ export default function EmotionSelectorScreen({navigation, route}) {
 
 const styles = StyleSheet.create({
     container: {
-        padding: '4%'
+        padding: '3%'
     },
     titleContainer: {
         marginTop: 10,

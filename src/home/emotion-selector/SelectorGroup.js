@@ -7,6 +7,7 @@ import SelectorButton from './SelectorButton';
 /*
     TODO: Remove duplication between selected/not selected emotions
     TODO: Refactor to only accept an object for selectorOptions
+    TODO: Conditionally render the entire selector view to avoid ugly padding
 */
 
 export default function SelectorGroup({selectorOptions, onUpdate, title, color}) {
@@ -34,7 +35,7 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
 
     return (
         <View style={styles.container}>
-            <Pressable style={styles.titleContainer} onPress={toggleOpen}>
+            <Pressable style={[styles.titleContainer, {elevation: isOpen ? 3 : 0, borderBottomStartRadius: isOpen?0:13, borderBottomEndRadius: isOpen?0:13}]} onPress={toggleOpen}>
                 <Text style={[styles.titleText, {color}]}>{title}</Text>
                 <View style={styles.titleIcon}>
                     <FontAwesomeIcon
@@ -72,26 +73,40 @@ export default function SelectorGroup({selectorOptions, onUpdate, title, color})
 }
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        elevation: 3,
+        marginBottom: 15,
+        borderRadius: 13,
+        backgroundColor: 'white'
+    },
     titleContainer: {
         flex: 1,
-        flexDirection: 'row'
+        borderTopStartRadius: 13,
+        borderTopEndRadius: 13,
+        paddingStart: 10,
+        paddingEnd: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        backgroundColor: 'white'
     },
     titleText: {
-        fontSize: 28,
+        fontSize: 30,
         fontWeight: 'bold',
         fontFamily: 'sans-serif-light',
-        marginBottom: 4,
-        marginStart: 4,
-        color: 'white'
+        textAlignVertical: 'center',
+        justifyContent: 'center',
+        marginBottom: 5
     },
     titleIcon: {
         justifyContent: 'center'
     },
     childContainer: {
         overflow: 'hidden',
-        flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        paddingTop: 3,
+        paddingStart: 5,
+        paddingEnd: 5,
+        paddingBottom: 3
     }
 });

@@ -92,13 +92,11 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 30,
         fontWeight: 'bold',
-        fontFamily: 'sans-serif-light',
-        textAlignVertical: 'center',
-        justifyContent: 'center',
-        marginBottom: 5
+        fontFamily: 'sans-serif-light'
     },
     titleIcon: {
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 6
     },
     childContainer: {
         overflow: 'hidden',

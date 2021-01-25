@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {StyleSheet, ScrollView, Text, View, Button} from 'react-native';
+import {StyleSheet, ScrollView, Text, View, Pressable} from 'react-native';
 import SelectorGroup from './emotion-selector/SelectorGroup';
 import {emotions, groups} from '../core/emotions';
+import Button from './Button';
 
 /*
     TODO: Pass object to SelectorGroup instead of array of names
@@ -16,6 +17,8 @@ export default function EmotionSelectorScreen({navigation, route}) {
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>How are you feeling?</Text>
             </View>
+            {/* <Text>{JSON.stringify(selected)}</Text>
+            <Text>{JSON.stringify(emotions.filter((emotion) => selected[emotion.name]))}</Text> */}
             {Object.keys(groups).map((groupName) => {
                 const currentGroup = groups[groupName];
                 const formattedGroupName = groupName.charAt(0) + groupName.slice(1).toLowerCase();
@@ -34,16 +37,17 @@ export default function EmotionSelectorScreen({navigation, route}) {
                     />
                 );
             })}
-            {/* <Button
-                title="Continue"
+            <Button
+                style={styles.button}
+                title="Next"
                 onPress={() =>
                     navigation.navigate(
                         'Add Emotional State',
                         // eslint-disable-next-line prettier/prettier
-                        Object.keys(selected)
+                        emotions.filter((emotion) => selected[emotion.name])
                     )
                 }
-            /> */}
+            />
         </ScrollView>
     );
 }
@@ -63,5 +67,11 @@ const styles = StyleSheet.create({
     titleText: {
         fontFamily: 'sans-serif',
         fontSize: 38
+    },
+    button: {
+        marginTop: 10,
+        marginBottom: 25,
+        marginStart: '20%',
+        marginEnd: '20%'
     }
 });

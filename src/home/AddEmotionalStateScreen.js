@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
-import {StyleSheet, ScrollView, Text, View, TextInput, Button} from 'react-native';
+import {StyleSheet, ScrollView, Text, View, TextInput} from 'react-native';
 import SelectorButton from './emotion-selector/SelectorButton';
-import {emotions, groups, colors} from '../core/emotions';
+import Button from './Button';
 
 export default function AddEmotionalStateScreen({route}) {
     return (
         <ScrollView>
             <View style={styles.emotionContainer}>
+                <Text style={styles.textInputLabel}>Selected emotions</Text>
                 <View style={styles.emotionPillsContainer}>
                     {route.params.map((emotion) => {
                         return (
                             <SelectorButton
-                                key={emotion}
-                                name={emotion}
-                                selectedColor={colors[emotions[emotion]]}
+                                key={emotion.name}
+                                name={emotion.name}
+                                selectedColor={emotion.group.color}
                                 selected={true}
                             />
                         );
@@ -40,7 +41,7 @@ export default function AddEmotionalStateScreen({route}) {
                 <TextInput style={styles.textInputBox} />
             </View>
 
-            <Button title="Submit" onPress={() => {}} />
+            <Button style={styles.button} title="Submit" />
         </ScrollView>
     );
 }
@@ -50,9 +51,7 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         paddingBottom: 10,
         paddingStart: 10,
-        paddingEnd: 10,
-        flex: 1,
-        alignItems: 'center'
+        paddingEnd: 10
     },
     emotionsLabel: {
         fontSize: 20,
@@ -63,7 +62,6 @@ const styles = StyleSheet.create({
     emotionPillsContainer: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center',
         flexWrap: 'wrap',
         marginBottom: 10
     },
@@ -75,12 +73,11 @@ const styles = StyleSheet.create({
     },
     textInputLabel: {
         fontSize: 20,
-        fontFamily: 'sans-serif-light',
+        fontFamily: 'sans-serif',
         marginBottom: 8,
         marginTop: 8
     },
     textInputBox: {
-        //backgroundColor: 'lightgray',
         height: 120,
         fontSize: 18,
         paddingStart: 8,
@@ -89,5 +86,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1,
         borderColor: 'lightgray'
+    },
+    button: {
+        marginTop: 10,
+        marginBottom: 25,
+        marginStart: '20%',
+        marginEnd: '20%'
     }
 });

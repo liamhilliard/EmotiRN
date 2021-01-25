@@ -58,15 +58,12 @@ const styles = StyleSheet.create({
     },
     titleContainer: {
         marginTop: 30,
-        marginStart: 15,
-        marginEnd: 15,
-        marginBottom: 30,
-        justifyContent: 'center',
-        flex: 1
+        marginBottom: 30
     },
     titleText: {
         fontFamily: 'sans-serif',
-        fontSize: 38
+        fontSize: 38,
+        textAlign: 'center'
     },
     button: {
         marginTop: 10,

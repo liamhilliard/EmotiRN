@@ -5,7 +5,7 @@ import Button from './Button';
 
 export default function AddEmotionalStateScreen({route}) {
     return (
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <View style={styles.emotionContainer}>
                 <Text style={styles.textInputLabel}>Selected emotions</Text>
                 <View style={styles.emotionPillsContainer}>
@@ -47,17 +47,12 @@ export default function AddEmotionalStateScreen({route}) {
 }
 
 const styles = StyleSheet.create({
-    emotionContainer: {
-        paddingTop: 15,
-        paddingBottom: 10,
-        paddingStart: 10,
-        paddingEnd: 10
+    container: {
+        backgroundColor: '#f0eeeb'
     },
-    emotionsLabel: {
-        fontSize: 20,
-        fontFamily: 'sans-serif-light',
-        marginBottom: 8,
-        marginTop: 8
+    emotionContainer: {
+        marginStart: 15,
+        marginEnd: 15
     },
     emotionPillsContainer: {
         flex: 1,
@@ -66,13 +61,11 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     textInput: {
-        paddingBottom: 20,
-        paddingStart: 15,
-        paddingEnd: 15,
-        flex: 1
+        marginStart: 15,
+        marginEnd: 15
     },
     textInputLabel: {
-        fontSize: 20,
+        fontSize: 22,
         fontFamily: 'sans-serif',
         marginBottom: 8,
         marginTop: 8
@@ -85,7 +78,8 @@ const styles = StyleSheet.create({
         textAlignVertical: 'top',
         borderRadius: 5,
         borderWidth: 1,
-        borderColor: 'lightgray'
+        borderColor: 'gray',
+        backgroundColor: 'lightgray'
     },
     button: {
         marginTop: 10,

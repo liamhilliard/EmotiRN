@@ -48,12 +48,14 @@ const styles = StyleSheet.create({
     },
     txt: {
         textAlign: 'center',
+        fontFamily: 'Nunito-Bold',
         fontSize: 16
     },
     icon: {
         marginTop: 5,
         marginEnd: 5,
         fontSize: 11,
+        fontFamily: 'Nunito-Bold',
         fontWeight: 'bold'
     }
 });

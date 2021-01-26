@@ -109,10 +109,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     titleText: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        fontFamily: 'sans-serif',
-        marginStart: 10,
+        fontSize: 26,
+        fontFamily: 'Nunito-SemiBold',
+        marginStart: 15,
         marginTop: 3
     },
     titleIcon: {

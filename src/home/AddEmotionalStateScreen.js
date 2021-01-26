@@ -4,12 +4,16 @@ import SelectorButton from './emotion-selector/SelectorButton';
 import Button from './Button';
 
 export default function AddEmotionalStateScreen({route}) {
+    const selectedEmotions = route.params;
+
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.emotionContainer}>
-                <Text style={styles.textInputLabel}>Selected emotions</Text>
+            <View style={styles.box}>
+                {selectedEmotions.length > 0 &&
+                    <Text style={styles.textInputLabel}>Selected emotions</Text>
+                }
                 <View style={styles.emotionPillsContainer}>
-                    {route.params.map((emotion) => {
+                    {selectedEmotions.map((emotion) => {
                         return (
                             <SelectorButton
                                 key={emotion.name}
@@ -21,19 +25,19 @@ export default function AddEmotionalStateScreen({route}) {
                     })}
                 </View>
             </View>
-            <View style={styles.textInput}>
+            <View style={styles.box}>
                 <Text style={styles.textInputLabel}>
                     Describe what you're feeling
                 </Text>
                 <TextInput multiline={true} style={styles.textInputBox} />
             </View>
-            <View style={styles.textInput}>
+            <View style={styles.box}>
                 <Text style={styles.textInputLabel}>
                     What caused you to feel this way?
                 </Text>
                 <TextInput multiline={true} style={styles.textInputBox} />
             </View>
-            <View style={styles.textInput}>
+            <View style={styles.box}>
                 <Text style={styles.textInputLabel}>
                     Do you feel the urge to do, or avoid doing, something
                     because of these feelings?
@@ -50,28 +54,23 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#f0eeeb'
     },
-    emotionContainer: {
-        marginStart: 15,
-        marginEnd: 15
-    },
     emotionPillsContainer: {
         flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        marginBottom: 10
+        flexWrap: 'wrap'
     },
-    textInput: {
-        marginStart: 15,
-        marginEnd: 15
+    box: {
+        paddingHorizontal: 20
     },
     textInputLabel: {
         fontSize: 22,
-        fontFamily: 'sans-serif',
-        marginBottom: 8,
-        marginTop: 8
+        fontFamily: 'Nunito-SemiBold',
+        paddingTop: 30,
+        paddingBottom: 10
     },
     textInputBox: {
-        height: 120,
+        fontFamily: 'Nunito-Regular',
+        height: 130,
         fontSize: 18,
         paddingStart: 8,
         paddingEnd: 5,
@@ -82,9 +81,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'lightgray'
     },
     button: {
-        marginTop: 10,
-        marginBottom: 25,
-        marginStart: '20%',
-        marginEnd: '20%'
+        marginTop: 20
     }
 });

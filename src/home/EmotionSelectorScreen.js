@@ -17,8 +17,6 @@ export default function EmotionSelectorScreen({navigation, route}) {
             <View style={styles.titleContainer}>
                 <Text style={styles.titleText}>How are you feeling?</Text>
             </View>
-            {/* <Text>{JSON.stringify(selected)}</Text>
-            <Text>{JSON.stringify(emotions.filter((emotion) => selected[emotion.name]))}</Text> */}
             {Object.keys(groups).map((groupName) => {
                 const currentGroup = groups[groupName];
                 const formattedGroupName = groupName.charAt(0) + groupName.slice(1).toLowerCase();
@@ -58,17 +56,14 @@ const styles = StyleSheet.create({
     },
     titleContainer: {
         marginTop: 30,
-        marginBottom: 30
+        marginBottom: 20
     },
     titleText: {
-        fontFamily: 'sans-serif',
+        fontFamily: 'Nunito-Regular',
         fontSize: 38,
         textAlign: 'center'
     },
     button: {
-        marginTop: 10,
-        marginBottom: 25,
-        marginStart: '20%',
-        marginEnd: '20%'
+        marginTop: 20
     }
 });

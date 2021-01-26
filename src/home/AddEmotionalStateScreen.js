@@ -52,7 +52,7 @@ export default function AddEmotionalStateScreen({route}) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#f0eeeb'
+        backgroundColor: '#F9F5F1'
     },
     emotionPillsContainer: {
         flex: 1,
@@ -63,22 +63,24 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20
     },
     textInputLabel: {
-        fontSize: 22,
+        fontSize: 20,
         fontFamily: 'Nunito-SemiBold',
-        paddingTop: 30,
+        color: '#383636',
+        paddingTop: 20,
         paddingBottom: 10
     },
     textInputBox: {
         fontFamily: 'Nunito-Regular',
+        color: '#383636',
         height: 130,
         fontSize: 18,
         paddingStart: 8,
         paddingEnd: 5,
         textAlignVertical: 'top',
-        borderRadius: 5,
+        borderRadius: 10,
         borderWidth: 1,
-        borderColor: 'gray',
-        backgroundColor: 'lightgray'
+        borderColor: '#E6DBDB',
+        backgroundColor: 'white'
     },
     button: {
         marginTop: 20

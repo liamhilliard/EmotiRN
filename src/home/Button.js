@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         marginEnd: '20%'
     },
     button: {
-        backgroundColor: '#4287f5'
+        backgroundColor: '#7D7B79'
     },
     buttonTxt: {
         textAlign: 'center',

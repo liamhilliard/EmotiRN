@@ -52,16 +52,17 @@ export default function EmotionSelectorScreen({navigation, route}) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#f0eeeb'
+        backgroundColor: '#F9F5F1'
     },
     titleContainer: {
         marginTop: 30,
-        marginBottom: 20
+        marginBottom: 30
     },
     titleText: {
         fontFamily: 'Nunito-Regular',
-        fontSize: 38,
-        textAlign: 'center'
+        fontSize: 32,
+        textAlign: 'center',
+        color: '#383636'
     },
     button: {
         marginTop: 20

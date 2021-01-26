@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         marginStart: 15,
         marginEnd: 15,
         marginBottom: 15,
-        borderRadius: 13,
+        borderRadius: 8,
         backgroundColor: 'white'
     },
     titleContainer: {

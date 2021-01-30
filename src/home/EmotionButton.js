@@ -7,14 +7,19 @@ export default function EmotionButton({feelings, color, icon, onSelect}) {
 
     return (
         <Pressable
-            style={[styles.container]}
+            style={[
+                styles.container,
+                isSelected
+                    ? {borderColor: color, backgroundColor: color, elevation: 5}
+                    : {borderColor: '#888', backgroundColor: 'white', elevation: 0}
+            ]}
             onPress={() => {
                 // onSelect();
                 setSelected(!isSelected);
             }}>
-            <Text style={styles.feelings}>{feelings.join(', ')}</Text>
+            <Text style={[styles.feelings, {color: isSelected ? 'white' : '#383636'}]}>{feelings.join(', ')}</Text>
             <View style={styles.icon}>
-                <FontAwesomeIcon color={isSelected ? color : 'lightgray'} size={32} icon={icon} />
+                <FontAwesomeIcon color={isSelected ? color : '#888'} size={32} icon={icon} />
             </View>
         </Pressable>
     );
@@ -23,19 +28,26 @@ export default function EmotionButton({feelings, color, icon, onSelect}) {
 const styles = StyleSheet.create({
     container: {
         // backgroundColor: 'lightgray',
-        paddingStart: 30,
-        paddingEnd: 30,
-        marginBottom: 30,
+        marginStart: 30,
+        marginEnd: 30,
+        marginBottom: 15,
+        paddingStart: 15,
+        paddingEnd: 0,
+        // paddingVertical: 5,
+        borderRadius: 50,
+        borderWidth: 3,
         // elevation: 5,
         flex: 1,
         justifyContent: 'space-between',
         flexDirection: 'row'
     },
     icon: {
-        // backgroundColor: '#68967d'
+        backgroundColor: 'white',
+        padding: 5,
+        borderRadius: 50
     },
     feelings: {
-        fontFamily: 'Nunito-Regular',
+        fontFamily: 'Nunito-Bold',
         fontSize: 20,
         textAlignVertical: 'center',
         color: '#383636',

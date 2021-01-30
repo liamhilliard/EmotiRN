@@ -16,7 +16,7 @@ const emotionGroups = [
     },
     {
         id: 2,
-        feelings: ['annoyed', 'anger', 'furious'],
+        feelings: ['annoyed', 'angry', 'furious'],
         color: '#f44336',
         icon: faAngry
     },

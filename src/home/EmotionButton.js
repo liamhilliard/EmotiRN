@@ -1,38 +1,46 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Pressable} from 'react-native';
+import {StyleSheet, View, Text, Pressable, PixelRatio} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 export default function EmotionButton({feelings, color, icon, onSelect}) {
+    const [isSelected, setSelected] = useState(false);
+
     return (
-        <Pressable style={[styles.container, {backgroundColor: color}]}>
+        <Pressable
+            style={[styles.container]}
+            onPress={() => {
+                // onSelect();
+                setSelected(!isSelected);
+            }}>
+            <Text style={styles.feelings}>{feelings.join(', ')}</Text>
             <View style={styles.icon}>
-                <FontAwesomeIcon color={color} size={32} icon={icon} />
+                <FontAwesomeIcon color={isSelected ? color : 'lightgray'} size={32} icon={icon} />
             </View>
-            <Text style={styles.feelings}>
-                {feelings.map((emotion) => {
-                    return <Text key={emotion}>{emotion}</Text>;
-                })}
-            </Text>
         </Pressable>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'red',
-        marginStart: 15,
-        marginEnd: 15,
-        elevation: 5,
-        // flex: 1
+        // backgroundColor: 'lightgray',
+        paddingStart: 30,
+        paddingEnd: 30,
+        marginBottom: 30,
+        // elevation: 5,
+        flex: 1,
+        justifyContent: 'space-between',
+        flexDirection: 'row'
     },
     icon: {
-        // marginTop: 50,
-        // marginBottom: 30
+        // backgroundColor: '#68967d'
     },
     feelings: {
         fontFamily: 'Nunito-Regular',
-        // fontSize: 48,
-        textAlign: 'center',
-        color: '#383636'
+        fontSize: 20,
+        textAlignVertical: 'center',
+        color: '#383636',
+        // backgroundColor: '#94928b',
+        flex: 1,
+        flexDirection: 'row'
     }
 });

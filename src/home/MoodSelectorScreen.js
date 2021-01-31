@@ -25,7 +25,8 @@ export default function MoodSelectorScreen() {
             </View>
             <View style={styles.btnContainer}>
                 <Button
-                    backgroundColor="#7a4437"
+                    backgroundColor="#734e44"
+                    rippleColor="#bfab8e"
                     color="#ede2d1"
                     title="Next"
                     onPress={() => {}}

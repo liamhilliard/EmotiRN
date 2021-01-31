@@ -25,7 +25,7 @@ export default function Button({
 const styles = StyleSheet.create({
     container: {
         borderRadius: 100,
-        elevation: 5,
+        // elevation: 5,
         overflow: 'hidden'
     },
     buttonTxt: {

@@ -20,7 +20,7 @@ export default function EmotionButton({feelings, icon, onSelect}) {
                 <Text style={styles.feelings}>{feelings.join(', ')}</Text>
                 <FontAwesomeIcon
                     style={styles.checkContainer}
-                    color={'#7a4437'}
+                    color={'#734e44'}
                     size={36}
                     icon={isSelected ? faCheckCircle : faCircle}
                 />

@@ -4,7 +4,7 @@ import EmotionButton from './EmotionButton';
 import {emotionGroups} from '../core/emotions';
 import Button from './Button';
 
-export default function MoodSelectorScreen() {
+export default function MoodSelectorScreen({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.titleText}>How are you{'\n'}feeling?</Text>
@@ -29,7 +29,12 @@ export default function MoodSelectorScreen() {
                     rippleColor="#bfab8e"
                     color="#ede2d1"
                     title="Next"
-                    onPress={() => {}}
+                    onPress={() => {
+                        navigation.navigate(
+                            'MoodDetails',
+                            []
+                        );
+                    }}
                 />
             </View>
         </View>

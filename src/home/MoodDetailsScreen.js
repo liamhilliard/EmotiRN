@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import {StyleSheet, ScrollView, Text, View, TextInput} from 'react-native';
-import SelectorButton from './emotion-selector/SelectorButton';
 import Button from './Button';
 
-export default function AddEmotionalStateScreen({route}) {
+export default function MoodDetailsScreen({route}) {
     const selectedEmotions = route.params;
 
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.box}>
+            {/* <View style={styles.box}>
                 {selectedEmotions.length > 0 &&
                     <Text style={styles.textInputLabel}>Selected emotions</Text>
                 }
@@ -24,7 +23,7 @@ export default function AddEmotionalStateScreen({route}) {
                         );
                     })}
                 </View>
-            </View>
+            </View> */}
             <View style={styles.box}>
                 <Text style={styles.textInputLabel}>
                     Describe what you're feeling

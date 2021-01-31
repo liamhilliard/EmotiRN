@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Pressable} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle} from '@fortawesome/free-regular-svg-icons';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
+import {Colors} from '../styles';
 
 export default function EmotionButton({feelings, icon, onSelect}) {
     const [isSelected, setSelected] = useState(false);
@@ -15,15 +16,17 @@ export default function EmotionButton({feelings, icon, onSelect}) {
                     // onSelect();
                     setSelected(!isSelected);
                 }}
-                android_ripple={{color: '#bfab8e'}}>
+                android_ripple={{color: Colors.backgroundAltRipple}}>
                 {icon}
                 <Text style={styles.feelings}>{feelings.join(', ')}</Text>
-                <FontAwesomeIcon
-                    style={styles.checkContainer}
-                    color={'#734e44'}
-                    size={36}
-                    icon={isSelected ? faCheckCircle : faCircle}
-                />
+                {onSelect && (
+                    <FontAwesomeIcon
+                        style={styles.checkContainer}
+                        color={Colors.secondary}
+                        size={36}
+                        icon={isSelected ? faCheckCircle : faCircle}
+                    />
+                )}
             </Pressable>
         </View>
     );
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
         borderRadius: 100
     },
     pressable: {
-        backgroundColor: '#dbcfbd',
+        backgroundColor: Colors.backgroundAlt,
         paddingHorizontal: 11,
         flex: 1,
         justifyContent: 'space-between',
@@ -49,7 +52,7 @@ const styles = StyleSheet.create({
         paddingStart: 20,
         paddingEnd: 10,
         textAlignVertical: 'center',
-        color: '#383636',
+        color: Colors.text,
         flex: 1
     },
     checkContainer: {

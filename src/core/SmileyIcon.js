@@ -2,14 +2,15 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import Svg, {Circle, Defs, LinearGradient, Stop} from 'react-native-svg';
+import {Colors} from '../styles';
 
 const defaultSize = 30;
 const insetValue = 2;
 
 export default function SmileyIcon({size, icon, accentColor}) {
-    const bgColor = '#f0d78b';
-    const bgColorAccent = accentColor || '#f0d28b';
-    const fgColor = '#383636';
+    const bgColor = Colors.smiley.background;
+    const bgColorAccent = accentColor || Colors.smiley.backgroundAlt;
+    const fgColor = Colors.smiley.foreground;
     const iconSize = size || defaultSize;
     const iconBgSize = iconSize - insetValue;
     const iconRadius = size / 2;

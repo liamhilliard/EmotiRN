@@ -1,8 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import EmotionButton from './EmotionButton';
+import MoodSelector from './MoodSelector';
 import {emotionGroups} from '../core/emotions';
 import Button from './Button';
+import {Colors} from '../styles';
 
 export default function MoodSelectorScreen({navigation}) {
     return (
@@ -11,12 +12,12 @@ export default function MoodSelectorScreen({navigation}) {
             <View style={styles.moodContainer}>
                 {emotionGroups.map(({id, feelings, color, icon}) => {
                     return (
-                        <EmotionButton
+                        <MoodSelector
                             key={id}
                             feelings={feelings}
                             color={color}
                             icon={icon}
-                            onPress={() => {
+                            onSelect={() => {
                                 // something
                             }}
                         />
@@ -25,15 +26,12 @@ export default function MoodSelectorScreen({navigation}) {
             </View>
             <View style={styles.btnContainer}>
                 <Button
-                    backgroundColor="#734e44"
-                    rippleColor="#bfab8e"
-                    color="#ede2d1"
+                    backgroundColor={Colors.secondary}
+                    rippleColor={Colors.secondaryAlt}
+                    color={Colors.background}
                     title="Next"
                     onPress={() => {
-                        navigation.navigate(
-                            'MoodDetails',
-                            []
-                        );
+                        navigation.navigate('MoodDetails', []);
                     }}
                 />
             </View>
@@ -43,7 +41,7 @@ export default function MoodSelectorScreen({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#ede2d1',
+        backgroundColor: Colors.background,
         justifyContent: 'space-evenly',
         height: '100%',
         width: '100%',
@@ -53,7 +51,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Nunito-Bold',
         fontSize: 36,
         textAlign: 'center',
-        color: '#383636'
+        color: Colors.text
     },
     btnContainer: {
         marginHorizontal: '30%'

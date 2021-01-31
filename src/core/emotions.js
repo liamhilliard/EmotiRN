@@ -7,6 +7,7 @@ import {
     faSurprise as iconSurprised
 } from '@fortawesome/free-regular-svg-icons';
 import React from 'react';
+import {Colors} from '../styles';
 import SmileyIcon from './SmileyIcon';
 
 const emotionGroups = [
@@ -18,12 +19,12 @@ const emotionGroups = [
     {
         id: 2,
         feelings: ['annoyed', 'angry', 'furious'],
-        icon: <SmileyIcon accentColor='#f0958b' icon={iconAnger} size={36} />
+        icon: <SmileyIcon accentColor={Colors.smiley.moods.angry} icon={iconAnger} size={36} />
     },
     {
         id: 3,
         feelings: ['bored', 'disgusted', 'loathing'],
-        icon: <SmileyIcon accentColor='#90cf76' icon={iconDisgusted} size={36} />
+        icon: <SmileyIcon accentColor={Colors.smiley.moods.disgusted} icon={iconDisgusted} size={36} />
     },
     {
         id: 4,
@@ -38,7 +39,7 @@ const emotionGroups = [
     {
         id: 6,
         feelings: ['distracted', 'surprised', 'amazed'],
-        icon: <SmileyIcon accentColor='#7cc6de' icon={iconSurprised} size={36} />
+        icon: <SmileyIcon accentColor={Colors.smiley.moods.sad} icon={iconSurprised} size={36} />
     }
 ];
 

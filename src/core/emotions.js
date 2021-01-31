@@ -1,48 +1,44 @@
 import {
-    faAngry,
-    faFlushed,
-    faFrown,
-    faSmile,
-    faSurprise,
-    faTired
+    faFrownOpen as iconAfraid,
+    faAngry as iconAnger,
+    faTired as iconDisgusted,
+    faSmile as iconHappy,
+    faFrown as iconSad,
+    faSurprise as iconSurprised
 } from '@fortawesome/free-regular-svg-icons';
+import React from 'react';
+import SmileyIcon from './SmileyIcon';
 
 const emotionGroups = [
     {
         id: 1,
         feelings: ['anxious', 'afraid', 'terrified'],
-        color: '#74ac33',
-        icon: faFlushed
+        icon: <SmileyIcon icon={iconAfraid} size={36} />
     },
     {
         id: 2,
         feelings: ['annoyed', 'angry', 'furious'],
-        color: '#f44336',
-        icon: faAngry
+        icon: <SmileyIcon accentColor='#f0958b' icon={iconAnger} size={36} />
     },
     {
         id: 3,
         feelings: ['bored', 'disgusted', 'loathing'],
-        color: '#a13cb2',
-        icon: faTired
+        icon: <SmileyIcon accentColor='#90cf76' icon={iconDisgusted} size={36} />
     },
     {
         id: 4,
         feelings: ['content', 'happy', 'ecstatic'],
-        color: '#f5a620',
-        icon: faSmile
+        icon: <SmileyIcon icon={iconHappy} size={36} />
     },
     {
         id: 5,
         feelings: ['lonely', 'sad', 'depressed'],
-        color: '#2f97ea',
-        icon: faFrown
+        icon: <SmileyIcon icon={iconSad} size={36} />
     },
     {
         id: 6,
         feelings: ['distracted', 'surprised', 'amazed'],
-        color: '#678a9a',
-        icon: faSurprise
+        icon: <SmileyIcon accentColor='#7cc6de' icon={iconSurprised} size={36} />
     }
 ];
 

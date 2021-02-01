@@ -3,6 +3,7 @@ const colors = {
 
     background: '#ede2d1',
     backgroundAlt: '#dbcfbd',
+    backgroundAlt2: '#f5ecdf',
     backgroundAltRipple: '#bfab8e',
 
     secondary: '#734e44',

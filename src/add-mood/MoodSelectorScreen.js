@@ -29,14 +29,12 @@ export default function MoodSelectorScreen({navigation}) {
                     );
                 })}
             </View>
-            <View style={styles.btnContainer}>
-                <Button
-                    title="Next"
-                    onPress={() => {
-                        navigation.navigate('MoodDetails', selectedEmotions);
-                    }}
-                />
-            </View>
+            <Button
+                title="Next"
+                onPress={() => {
+                    navigation.navigate('MoodDetails', selectedEmotions);
+                }}
+            />
         </View>
     );
 }
@@ -54,8 +52,5 @@ const styles = StyleSheet.create({
         fontSize: 36,
         textAlign: 'center',
         color: Colors.text
-    },
-    btnContainer: {
-        marginHorizontal: '30%'
     }
 });

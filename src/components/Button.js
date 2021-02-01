@@ -29,7 +29,8 @@ export default function Button({
 const styles = StyleSheet.create({
     container: {
         borderRadius: 100,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        marginHorizontal: '30%'
     },
     buttonTxt: {
         textAlign: 'center',

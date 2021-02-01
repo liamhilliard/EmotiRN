@@ -19,7 +19,8 @@ export default function App() {
         <NavigationContainer>
             <Tab.Navigator
                 tabBarOptions={tabBarOptions}
-                screenOptions={screenOptions}>
+                screenOptions={screenOptions}
+                initialRouteName={routes.addMood.name}>
                 <Tab.Screen name={routes.dashboard.name} component={routes.dashboard.screen} />
                 <Tab.Screen name={routes.addMood.name} component={routes.addMood.screen} />
                 <Tab.Screen name={routes.viewMoods.name} component={routes.viewMoods.screen} />
@@ -32,6 +33,7 @@ const tabBarOptions = {
     labelStyle: {
         marginBottom: 5,
     },
+    keyboardHidesTabBar: true,
     activeBackgroundColor: Colors.backgroundAlt,
     inactiveBackgroundColor: Colors.backgroundAlt,
     activeTintColor: Colors.secondary,

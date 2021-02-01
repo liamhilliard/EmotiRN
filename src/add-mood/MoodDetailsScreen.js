@@ -16,7 +16,7 @@ export default function MoodDetailsScreen({route}) {
             <View style={styles.emotions}>
                 {emotionGroups.map(({id, icon}) => {
                     return (
-                        <View style={styles.emotionsCol} id={id}>
+                        <View style={styles.emotionsCol} key={id}>
                             {icon}
                             <View style={styles.emotionSelect}>
                                 <FontAwesomeIcon

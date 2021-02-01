@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, ScrollView, Text, View} from 'react-native';
 import {Colors} from '../styles';
 import Button from '../components/Button';
-import TextInput from '../components/TextInput';
+import MoodDescriptor from '../components/MoodDescriptor';
 import {emotionGroups} from '../core/emotions';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle, faCheck} from '@fortawesome/free-solid-svg-icons';
@@ -29,8 +29,8 @@ export default function MoodDetailsScreen({route}) {
                     );
                 })}
             </View>
-            <TextInput title="Describe how you feel" />
-            <TextInput title="What caused you to feel this way?" />
+            <MoodDescriptor title="Describe how you feel" />
+            <MoodDescriptor title="What caused you to feel this way?" />
 
             <Button
                 title="Add"
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignContent: 'center',
-        marginBottom: 30
+        marginBottom: 40
     },
     emotionSelect: {
         marginTop: 10,

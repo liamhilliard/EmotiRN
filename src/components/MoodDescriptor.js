@@ -1,12 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View, TextInput as RnTextInput} from 'react-native';
+import {StyleSheet, Text, View, TextInput} from 'react-native';
 import {Colors} from '../styles';
 
-export default function TextInput({title}) {
+export default function MoodDescriptor({title, onChange}) {
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{title}</Text>
-            <RnTextInput multiline={true} style={styles.textInput} />
+            <TextInput
+                multiline={true}
+                style={styles.textInput}
+                onChange={onChange}
+            />
         </View>
     );
 }
@@ -24,9 +28,9 @@ const styles = StyleSheet.create({
     textInput: {
         fontFamily: 'Nunito-Regular',
         color: Colors.text,
-        height: 130,
-        fontSize: 18,
-        paddingStart: 8,
+        height: 155,
+        fontSize: 19,
+        paddingStart: 10,
         paddingEnd: 5,
         textAlignVertical: 'top',
         borderRadius: 5,

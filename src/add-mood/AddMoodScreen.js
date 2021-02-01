@@ -1,14 +1,11 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import MoodSelectorScreen from './MoodSelectorScreen';
 import MoodDetailsScreen from './MoodDetailsScreen';
-import {Colors} from '../styles';
 
 const Stack = createStackNavigator();
-StatusBar.setBackgroundColor(Colors.text);
 
-export default function MoodScreen() {
+export default function AddMoodScreen() {
     return (
         <Stack.Navigator>
             <Stack.Screen

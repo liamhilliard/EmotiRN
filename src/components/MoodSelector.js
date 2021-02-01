@@ -13,7 +13,7 @@ export default function EmotionButton({feelings, icon, onSelect}) {
             <Pressable
                 style={[styles.pressable]}
                 onPress={() => {
-                    // onSelect();
+                    onSelect(!isSelected);
                     setSelected(!isSelected);
                 }}
                 android_ripple={{color: Colors.backgroundAltRipple}}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, Pressable, View} from 'react-native';
+import {Colors} from '../styles';
 
 export default function Button({
     title,
@@ -8,13 +9,16 @@ export default function Button({
     color,
     rippleColor
 }) {
+    const bgColor = backgroundColor || Colors.secondary;
+    const fgColor = color || Colors.background;
+    const fgRippleColor = rippleColor || Colors.secondaryAlt;
     return (
-        <View style={[styles.container, {backgroundColor: backgroundColor}]}>
+        <View style={[styles.container, {backgroundColor: bgColor}]}>
             <Pressable
                 style={[styles.button]}
                 onPress={onPress}
-                android_ripple={{color: rippleColor || 'white'}}>
-                <Text style={[styles.buttonTxt, {color: color || 'white'}]}>
+                android_ripple={{color: fgRippleColor}}>
+                <Text style={[styles.buttonTxt, {color: fgColor}]}>
                     {title}
                 </Text>
             </Pressable>
@@ -30,7 +34,6 @@ const styles = StyleSheet.create({
     buttonTxt: {
         textAlign: 'center',
         overflow: 'hidden',
-        color: 'white',
         fontSize: 24,
         padding: 8,
         fontFamily: 'Nunito-SemiBold'

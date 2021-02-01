@@ -7,6 +7,7 @@ const colors = {
 
     secondary: '#734e44',
     secondaryAlt: '#42302a',
+    secondaryAlt2: '#2b221f',
 
     smiley: {
         background: '#f0d78b',

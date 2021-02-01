@@ -16,7 +16,7 @@ export default function MoodDetailsScreen({route}) {
             <View style={styles.emotions}>
                 {emotionGroups.map(({id, icon}) => {
                     return (
-                        <View style={styles.emotionsCol}>
+                        <View style={styles.emotionsCol} id={id}>
                             {icon}
                             <View style={styles.emotionSelect}>
                                 <FontAwesomeIcon
@@ -58,6 +58,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         marginBottom: 40
+    },
+    emotionsCol: {
+        paddingHorizontal: 4
     },
     emotionSelect: {
         marginTop: 10,

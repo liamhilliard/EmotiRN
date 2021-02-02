@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import MoodSelector from '../components/MoodSelector';
-import {emotionGroups} from '../core/emotions';
-import Button from '../components/Button';
-import {Colors} from '../styles';
+import MoodSelector from './MoodSelector';
+import {emotionGroups} from '../../../core/emotions';
+import {Button} from '../../../components';
+import {Colors} from '../../../styles';
 
 export default function MoodSelectorScreen({navigation}) {
     const [selectedEmotions, setSelectedEmotions] = useState({});

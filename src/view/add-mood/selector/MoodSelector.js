@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, Pressable} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle} from '@fortawesome/free-regular-svg-icons';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
-import {Colors} from '../styles';
+import {Colors} from '../../../styles';
 
 export default function EmotionButton({feelings, icon, onSelect}) {
     const [isSelected, setSelected] = useState(false);

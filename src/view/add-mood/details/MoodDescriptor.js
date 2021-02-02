@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput} from 'react-native';
-import {Colors} from '../styles';
+import {Colors} from '../../../styles';
 
 export default function MoodDescriptor({title, onChange}) {
     return (

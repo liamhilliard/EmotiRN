@@ -1,11 +1,10 @@
 import React from 'react';
-import 'react-native-gesture-handler';
+import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {StatusBar} from 'react-native';
-import AddMoodScreen from './add-mood/AddMoodScreen';
-import ViewMoodsScreen from './view-moods/ViewMoodsScreen';
-import DashboardScreen from './dashboard/DashboardScreen';
+import {AddMoodScreen} from './view/add-mood';
+import {ViewMoodsScreen} from './view/view-moods';
+import {DashboardScreen} from './view/dashboard';
 import {Colors} from './styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faChartBar, faList, faPlusCircle, faFile} from '@fortawesome/free-solid-svg-icons';
@@ -42,7 +41,7 @@ const tabBarOptions = {
 
 const screenOptions = ({route}) => ({
     unmountOnBlur: true,
-    tabBarIcon: ({focused, color}) => {
+    tabBarIcon: ({color}) => {
         let icon;
         switch (route.name) {
             case routes.dashboard.name:

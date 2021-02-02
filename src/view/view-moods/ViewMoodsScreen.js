@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import {Colors} from '../styles';
+import {Colors} from '../../styles';
 
 export default function ViewMoodsScreen() {
     return (

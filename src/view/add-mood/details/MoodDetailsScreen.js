@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import {StyleSheet, ScrollView, Text, View} from 'react-native';
-import {Colors} from '../styles';
-import Button from '../components/Button';
-import MoodDescriptor from '../components/MoodDescriptor';
-import {emotionGroups} from '../core/emotions';
+import {Colors} from '../../../styles';
+import MoodDescriptor from './MoodDescriptor';
+import {emotionGroups} from '../../../core/emotions';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle, faCheck} from '@fortawesome/free-solid-svg-icons';
-import BackButton from '../components/BackButton';
+import {Button,BackButton} from '../../../components';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function MoodDetailsScreen({navigation, route}) {

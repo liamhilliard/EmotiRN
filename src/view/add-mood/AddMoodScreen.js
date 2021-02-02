@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import MoodSelectorScreen from './MoodSelectorScreen';
-import MoodDetailsScreen from './MoodDetailsScreen';
+import MoodSelectorScreen from './selector/MoodSelectorScreen';
+import MoodDetailsScreen from './details/MoodDetailsScreen';
 
 const Stack = createStackNavigator();
 

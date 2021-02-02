@@ -6,44 +6,54 @@ import MoodDescriptor from '../components/MoodDescriptor';
 import {emotionGroups} from '../core/emotions';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle, faCheck} from '@fortawesome/free-solid-svg-icons';
+import BackButton from '../components/BackButton';
 
-export default function MoodDetailsScreen({route}) {
+export default function MoodDetailsScreen({navigation, route}) {
     const selectedIds = route.params;
 
     return (
-        <ScrollView style={styles.container}>
-            <View style={styles.emotions}>
-                {emotionGroups.map(({id, icon}) => {
-                    return (
-                        <View style={styles.emotionsCol} key={id}>
-                            {icon}
-                            <View style={styles.emotionSelect}>
-                                <FontAwesomeIcon
-                                    color={Colors.secondary}
-                                    size={selectedIds[id] ? 22 : 10}
-                                    icon={selectedIds[id] ? faCheck : faCircle}
-                                />
-                            </View>
-                        </View>
-                    );
-                })}
-            </View>
-            <MoodDescriptor title="Describe how you feel" />
-            <MoodDescriptor title="What caused you to feel this way?" />
+        <View style={styles.container}>
 
-            <Button
-                title="Add"
-                onPress={() => {
-                    // navigation.navigate('MoodDetails', []);
-                }}
-            />
-        </ScrollView>
+            <ScrollView style={styles.scrollView}>
+                <View style={styles.emotions}>
+                    {emotionGroups.map(({id, icon}) => {
+                        return (
+                            <View style={styles.emotionsCol} key={id}>
+                                {icon}
+                                <View style={styles.emotionSelect}>
+                                    <FontAwesomeIcon
+                                        color={Colors.secondary}
+                                        size={selectedIds[id] ? 22 : 10}
+                                        icon={selectedIds[id] ? faCheck : faCircle}
+                                    />
+                                </View>
+                            </View>
+                        );
+                    })}
+                </View>
+                <MoodDescriptor title="Describe how you feel" />
+                <MoodDescriptor title="What caused you to feel this way?" />
+
+                <View style={styles.buttonWrapper}>
+                    <Button
+                        title="Add"
+                        onPress={() => {
+                            // navigation.navigate('MoodDetails', []);
+                        }}
+                    />
+                </View>
+            </ScrollView>
+            <BackButton onPress={navigation.goBack} />
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.background,
+        height: '100%'
+    },
+    scrollView: {
         paddingHorizontal: 30,
         paddingTop: 30
     },
@@ -66,5 +76,8 @@ const styles = StyleSheet.create({
         height: 10,
         justifyContent: 'center',
         alignSelf: 'center'
+    },
+    buttonWrapper: {
+        marginBottom: 20
     }
 });

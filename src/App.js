@@ -31,7 +31,7 @@ export default function App() {
 
 const tabBarOptions = {
     labelStyle: {
-        marginBottom: 5,
+        marginBottom: 5
     },
     keyboardHidesTabBar: true,
     activeBackgroundColor: Colors.backgroundAlt,
@@ -41,11 +41,12 @@ const tabBarOptions = {
 };
 
 const screenOptions = ({route}) => ({
+    unmountOnBlur: true,
     tabBarIcon: ({focused, color}) => {
         let icon;
         switch (route.name) {
             case routes.dashboard.name:
-                icon = faChartBar; 
+                icon = faChartBar;
                 break;
             case routes.addMood.name:
                 icon = faPlusCircle;
@@ -58,13 +59,7 @@ const screenOptions = ({route}) => ({
                 break;
         }
 
-        return (
-            <FontAwesomeIcon
-                color={color}
-                size={20}
-                icon={icon}
-            />
-        );
+        return <FontAwesomeIcon color={color} size={20} icon={icon} />;
     }
 });
 

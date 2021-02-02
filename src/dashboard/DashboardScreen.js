@@ -4,9 +4,11 @@ import { ScrollView } from 'react-native-gesture-handler';
 import {Colors} from '../styles';
 
 export default function DashboardScreen() {
+    console.log('DASHBOARD SCREEN');
+
     return (
         <ScrollView style={styles.container}>
-            <Text>Hello Dashboard</Text>        
+            <Text>Hello Dashboard</Text>
         </ScrollView>
     );
 }

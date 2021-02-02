@@ -5,7 +5,7 @@ import {Colors} from '../styles';
 export default function ViewMoodsScreen() {
     return (
         <View style={styles.container}>
-            <Text>Hello View Modds</Text>        
+            <Text>Hello View Modds</Text>
         </View>
     );
 }

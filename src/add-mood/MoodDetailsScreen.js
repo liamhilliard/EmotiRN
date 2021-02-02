@@ -9,7 +9,6 @@ import {faCircle, faCheck} from '@fortawesome/free-solid-svg-icons';
 
 export default function MoodDetailsScreen({route}) {
     const selectedIds = route.params;
-    // const emotions = emotionGroups.filter((emotion) => selectedIds[emotion.id]);
 
     return (
         <ScrollView style={styles.container}>

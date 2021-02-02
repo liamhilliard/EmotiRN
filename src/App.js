@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {StatusBar, StyleSheet} from 'react-native';
+import {StatusBar} from 'react-native';
 import AddMoodScreen from './add-mood/AddMoodScreen';
 import ViewMoodsScreen from './view-moods/ViewMoodsScreen';
 import DashboardScreen from './dashboard/DashboardScreen';

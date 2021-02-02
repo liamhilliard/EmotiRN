@@ -7,6 +7,7 @@ import {emotionGroups} from '../core/emotions';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle, faCheck} from '@fortawesome/free-solid-svg-icons';
 import BackButton from '../components/BackButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function MoodDetailsScreen({navigation, route}) {
     const selectedIds = route.params;
@@ -38,7 +39,8 @@ export default function MoodDetailsScreen({navigation, route}) {
                     <Button
                         title="Add"
                         onPress={() => {
-                            // navigation.navigate('MoodDetails', []);
+                            // Persist Mood
+                            // AsyncStorage.setItem('MyApp', JSON.stringify().then().catch();
                         }}
                     />
                 </View>

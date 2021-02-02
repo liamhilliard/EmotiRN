@@ -7,14 +7,22 @@ export default function Button({
     onPress,
     backgroundColor,
     color,
-    rippleColor
+    rippleColor,
+    disabled
 }) {
-    const bgColor = backgroundColor || Colors.secondary;
+    let bgColor;
+    if(disabled) {
+        bgColor = Colors.backgroundAlt;
+    } else {
+        bgColor = (backgroundColor || Colors.secondary);
+    }
+
     const fgColor = color || Colors.background;
     const fgRippleColor = rippleColor || Colors.secondaryAlt;
     return (
         <View style={[styles.container, {backgroundColor: bgColor}]}>
             <Pressable
+                disabled={disabled}
                 style={[styles.button]}
                 onPress={onPress}
                 android_ripple={{color: fgRippleColor}}>

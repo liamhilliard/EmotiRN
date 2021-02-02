@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import MoodSelector from './MoodSelector';
-import {emotionGroups} from '../../../core/emotions';
-import {Button} from '../../../components';
+import {Button, Icons} from '../../../components';
 import {Colors} from '../../../styles';
+import {Mood} from '../../../core';
 
 export default function MoodSelectorScreen({navigation}) {
     const [selectedEmotions, setSelectedEmotions] = useState({});
     let hasSelected = false;
-    for(const emotion in selectedEmotions){
+    for (const emotion in selectedEmotions) {
         selectedEmotions[emotion] && (hasSelected = true);
     }
 
@@ -16,17 +16,16 @@ export default function MoodSelectorScreen({navigation}) {
         <View style={styles.container}>
             <Text style={styles.titleText}>How are you{'\n'}feeling?</Text>
             <View style={styles.moodContainer}>
-                {emotionGroups.map(({id, feelings, color, icon}) => {
+                {Mood.EMOTIONS.map(({name, feelings}) => {
                     return (
                         <MoodSelector
-                            key={id}
+                            key={name}
                             feelings={feelings}
-                            color={color}
-                            icon={icon}
+                            icon={Icons[name]}
                             onSelect={(isSelected) => {
                                 setSelectedEmotions({
                                     ...selectedEmotions,
-                                    [id]: isSelected
+                                    [name]: isSelected
                                 });
                             }}
                         />

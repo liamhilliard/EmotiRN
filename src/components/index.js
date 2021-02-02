@@ -1,3 +1,4 @@
 import BackButton from './BackButton';
 import Button from './Button';
-export {Button, BackButton};
+import Icons from './Icons';
+export {Button, BackButton, Icons};

@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import {StyleSheet, ScrollView, Text, View} from 'react-native';
 import {Colors} from '../../../styles';
 import MoodDescriptor from './MoodDescriptor';
-import {emotionGroups} from '../../../core/emotions';
+import {Mood} from '../../../core';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle, faCheck} from '@fortawesome/free-solid-svg-icons';
-import {Button,BackButton} from '../../../components';
+import {Button, BackButton, Icons} from '../../../components';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function MoodDetailsScreen({navigation, route}) {
@@ -16,15 +16,15 @@ export default function MoodDetailsScreen({navigation, route}) {
 
             <ScrollView style={styles.scrollView}>
                 <View style={styles.emotions}>
-                    {emotionGroups.map(({id, icon}) => {
+                    {Mood.EMOTIONS.map(({name}) => {
                         return (
-                            <View style={styles.emotionsCol} key={id}>
-                                {icon}
+                            <View style={styles.emotionsCol} key={name}>
+                                {Icons[name]}
                                 <View style={styles.emotionSelect}>
                                     <FontAwesomeIcon
                                         color={Colors.secondary}
-                                        size={selectedIds[id] ? 22 : 10}
-                                        icon={selectedIds[id] ? faCheck : faCircle}
+                                        size={selectedIds[name] ? 22 : 10}
+                                        icon={selectedIds[name] ? faCheck : faCircle}
                                     />
                                 </View>
                             </View>

@@ -7,9 +7,10 @@ import {Colors} from '../styles';
 
 export default function MoodSelectorScreen({navigation}) {
     const [selectedEmotions, setSelectedEmotions] = useState({});
-    const anySelected = Object.keys(selectedEmotions)
-        .filter((name) => selectedEmotions[name])
-        .length === 0;
+    let hasSelected = false;
+    for(const emotion in selectedEmotions){
+        selectedEmotions[emotion] && (hasSelected = true);
+    }
 
     return (
         <View style={styles.container}>
@@ -33,7 +34,7 @@ export default function MoodSelectorScreen({navigation}) {
                 })}
             </View>
             <Button
-                disabled={anySelected}
+                disabled={!hasSelected}
                 title="Next"
                 onPress={() => {
                     navigation.navigate('MoodDetails', selectedEmotions);

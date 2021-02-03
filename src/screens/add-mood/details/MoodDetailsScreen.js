@@ -6,10 +6,11 @@ import {Mood} from '../../../core';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faCircle, faCheck} from '@fortawesome/free-solid-svg-icons';
 import {Button, BackButton, Icons} from '../../../components';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function MoodDetailsScreen({navigation, route}) {
     const selectedIds = route.params;
+    const [description, setDescription] = useState('');
+    const [cause, setCause] = useState('');
 
     return (
         <View style={styles.container}>
@@ -31,15 +32,32 @@ export default function MoodDetailsScreen({navigation, route}) {
                         );
                     })}
                 </View>
-                <MoodDescriptor title="Describe how you feel" />
-                <MoodDescriptor title="What caused you to feel this way?" />
+
+                <MoodDescriptor
+                    title="Describe how you feel"
+                    onChangeText={(text) => setDescription(text)}
+                />
+
+                <MoodDescriptor
+                    title="What caused you to feel this way?"
+                    onChangeText={(text) => setCause(text)}
+                />
 
                 <View style={styles.buttonWrapper}>
                     <Button
+                        disabled={
+                            description.length === 0 && cause.length === 0
+                        }
                         title="Add"
                         onPress={() => {
-                            // Persist Mood
-                            // AsyncStorage.setItem('MyApp', JSON.stringify().then().catch();
+                            new Mood(
+                                Mood.EMOTIONS.filter(
+                                    ({name}) => selectedIds[name]
+                                ),
+                                description,
+                                cause
+                            ).save()
+                            .then(() => {navigation.navigate("Dashboard")});
                         }}
                     />
                 </View>

@@ -2,14 +2,14 @@ import React from 'react';
 import {StyleSheet, Text, View, TextInput} from 'react-native';
 import {Colors} from '../../../styles';
 
-export default function MoodDescriptor({title, onChange}) {
+export default function MoodDescriptor({title, onChangeText}) {
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{title}</Text>
             <TextInput
                 multiline={true}
                 style={styles.textInput}
-                onChange={onChange}
+                onChangeText={onChangeText}
             />
         </View>
     );

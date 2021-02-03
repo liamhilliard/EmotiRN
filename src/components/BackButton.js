@@ -16,7 +16,12 @@ export default function BackButton({color, onPress}) {
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        padding: 15,
-        borderBottomEndRadius: 50
+        paddingStart: 3,
+        paddingTop: 3,
+        paddingEnd: 12,
+        paddingBottom: 12,
+        borderBottomEndRadius: 40,
+        backgroundColor: Colors.background,
+        elevation: 5
     }
 });

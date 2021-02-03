@@ -56,8 +56,9 @@ export default function MoodDetailsScreen({navigation, route}) {
                                 ),
                                 description,
                                 cause
-                            ).save()
-                            .then(() => {navigation.navigate("Dashboard")});
+                            )
+                                .save()
+                                .then(() => navigation.navigate('Dashboard'));
                         }}
                     />
                 </View>

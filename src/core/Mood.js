@@ -20,23 +20,43 @@ export default class Mood {
     }
 }
 
-function mergeMoods(mood) {
-    const storeKey = mood.date.split('T')[0];
-    return AsyncStorage.mergeItem(storeKey, JSON.stringify({[mood.date]: mood}));
+function getYmdDate(date) {
+    const dateString = (typeof date === 'string') ? date : new Date(date).toISOString();
+    return dateString.split('T')[0];
 }
 
-async function getMoodsByDate(date) {
-    const key = new Date(date).toISOString().split('T')[0];
-    return await AsyncStorage.getItem(key)
-        .then((obj) => {
-            if (!obj) {
-                return [];
-            } else {
-                const moodsMap = JSON.parse(obj);
-                return Object.keys(moodsMap).map((dateTime) => {
-                    return moodsMap[dateTime];
-                });
-            }
-        })
-        .catch((err) => console.log('Mood::getMoodsByDate', err));
+async function mergeMoods(mood) {
+    const storeKey = getYmdDate(mood.date);
+    try {
+        await AsyncStorage.mergeItem(storeKey, JSON.stringify({[mood.date]: mood}));
+    } catch (err) {
+        // toast error?
+        console.log('Mood::mergeMoods', err);
+    }
+}
+
+async function getMoodsByDate(date, toDate) {
+    let _fromDate = new Date(date);
+    let _toDate = toDate ? new Date(toDate) : _fromDate;
+
+    // get all dates in yyyy-mm-dd format between _fromDate and _toDate to query by
+    let dateRange = [];
+    do {
+        dateRange.push(getYmdDate(_fromDate));
+        _fromDate.setDate(_fromDate.getDate() + 1);
+    } while (getYmdDate(_fromDate) < getYmdDate(_toDate));
+
+    try {
+        // multiGet() returns an array of k/v pairs which we map and parse
+        // e.g.: [ ["key", "jsonValue"], ["key", "jsonValue"] ]
+        const moodGroups = await AsyncStorage.multiGet(dateRange);
+        return moodGroups.map(([key, value]) => [
+            key,
+            value === null ? [] : JSON.parse(value)
+        ]);
+    } catch (err) {
+        // toast error?
+        console.log('Mood::getMoodsByDate', err);
+        return [];
+    }
 }

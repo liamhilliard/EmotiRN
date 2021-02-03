@@ -14,7 +14,9 @@ export default function DashboardScreen() {
 
     return (
         <ScrollView style={styles.container}>
-            {moods.map((mood)=> <Text key={mood.date}>{JSON.stringify(mood)}</Text> )}
+            {moods.map((mood) => (
+                <Text key={mood.date}>{JSON.stringify(mood)}</Text>
+            ))}
             <Text>Hello Dashboard</Text>
         </ScrollView>
     );

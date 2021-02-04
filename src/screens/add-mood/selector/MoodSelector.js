@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 11,
         flex: 1,
         justifyContent: 'space-between',
+        alignItems: 'center',
         flexDirection: 'row'
     },
     feelings: {

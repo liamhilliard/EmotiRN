@@ -63,7 +63,7 @@ const screenOptions = ({route}) => ({
 });
 
 const routes = {
-    addMood: {name: "AddMood", screen: AddMoodScreen},
-    viewMoods: {name: "ViewMoods", screen: ViewMoodsScreen},
-    dashboard: {name: "Dashboard", screen: DashboardScreen}
+    addMood: {name: 'AddMood', screen: AddMoodScreen},
+    viewMoods: {name: 'ViewMoods', screen: ViewMoodsScreen},
+    dashboard: {name: 'Dashboard', screen: DashboardScreen}
 };

@@ -17,9 +17,9 @@ export default function SmileyIcon({size, icon, accentColor}) {
     const iconBgRadius = iconBgSize / 2;
 
     return (
-        <View style={styles.iconContainer}>
+        <View style={[styles.iconContainer, {width: iconSize, height: iconSize}]}>
             <View style={styles.iconBackground}>
-                <Svg height={size} width={size}>
+                <Svg height={iconSize} width={iconSize}>
                     <Defs>
                         <LinearGradient
                             id="gradient"

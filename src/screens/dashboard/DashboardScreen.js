@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet, Text, ScrollView} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Colors} from '../../styles';
 import {Mood} from '../../core';
 
@@ -13,18 +13,16 @@ export default function DashboardScreen() {
     }, []);
 
     return (
-        <ScrollView style={styles.container}>
-            {moods.map((mood) => (
-                <Text key={mood.date}>{JSON.stringify(mood)}</Text>
-            ))}
+        <View style={styles.container}>
             <Text>Hello Dashboard</Text>
-        </ScrollView>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: Colors.background,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        height: '100%'
     }
 });

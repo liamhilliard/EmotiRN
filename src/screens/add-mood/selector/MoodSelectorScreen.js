@@ -15,7 +15,7 @@ export default function MoodSelectorScreen({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.titleText}>How are you{'\n'}feeling?</Text>
-            <View style={styles.moodContainer}>
+            <View>
                 {Mood.EMOTIONS.map(({name, feelings}) => {
                     return (
                         <MoodSelector

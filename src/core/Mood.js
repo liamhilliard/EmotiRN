@@ -28,7 +28,10 @@ function getYmdDate(date) {
 async function mergeMoods(mood) {
     const storeKey = getYmdDate(mood.date);
     try {
-        await AsyncStorage.mergeItem(storeKey, JSON.stringify({[mood.date]: mood}));
+        await AsyncStorage.mergeItem(
+            storeKey,
+            JSON.stringify({[mood.date]: mood})
+        );
     } catch (err) {
         // toast error?
         console.log('Mood::mergeMoods', err);

@@ -53,12 +53,12 @@ export default function MoodDetailsScreen({navigation, route}) {
                             new Mood(
                                 Mood.EMOTIONS.filter(
                                     ({name}) => selectedIds[name]
-                                ),
+                                ).map(({id}) => id),
                                 description,
                                 cause
                             )
                                 .save()
-                                .then(() => navigation.navigate('Dashboard'));
+                                .then(() => navigation.navigate('ViewMoods'));
                         }}
                     />
                 </View>

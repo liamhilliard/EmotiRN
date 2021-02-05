@@ -11,12 +11,12 @@ import {Colors} from '../styles';
 import SmileyIcon from './SmileyIcon';
 
 const Icons = {
-    afraid: <SmileyIcon icon={iconAfraid} size={36} />,
-    angry: <SmileyIcon accentColor={Colors.smiley.moods.angry} icon={iconAnger} size={36} />,
-    disgusted: <SmileyIcon accentColor={Colors.smiley.moods.disgusted} icon={iconDisgusted} size={36} />,
-    happy: <SmileyIcon icon={iconHappy} size={36} />,
-    sad: <SmileyIcon icon={iconSad} size={36} />,
-    surprised: <SmileyIcon accentColor={Colors.smiley.moods.sad} icon={iconSurprised} size={36} />
+    afraid: (size) => <SmileyIcon icon={iconAfraid} size={size || 36} />,
+    angry: (size) => <SmileyIcon accentColor={Colors.smiley.moods.angry} icon={iconAnger} size={size || 36} />,
+    disgusted: (size) => <SmileyIcon accentColor={Colors.smiley.moods.disgusted} icon={iconDisgusted} size={size || 36} />,
+    happy: (size) => <SmileyIcon icon={iconHappy} size={size || 36} />,
+    sad: (size) => <SmileyIcon icon={iconSad} size={size || 36} />,
+    surprised: (size) => <SmileyIcon accentColor={Colors.smiley.moods.sad} icon={iconSurprised} size={size || 36} />
 };
 
 export default Icons;

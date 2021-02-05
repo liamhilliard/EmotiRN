@@ -11,8 +11,8 @@ export default class Mood {
         this.cause = cause;
     }
 
-    static getByDate(date) {
-        return getMoodsByDate(date);
+    static getAllByDate(fromDate, toDate) {
+        return getMoodsByDate(fromDate, toDate);
     }
 
     save() {
@@ -38,8 +38,8 @@ async function mergeMoods(mood) {
     }
 }
 
-async function getMoodsByDate(date, toDate) {
-    let _fromDate = new Date(date);
+async function getMoodsByDate(fromDate, toDate) {
+    let _fromDate = new Date(fromDate);
     let _toDate = toDate ? new Date(toDate) : _fromDate;
 
     // get all dates in yyyy-mm-dd format between _fromDate and _toDate to query by
@@ -47,12 +47,15 @@ async function getMoodsByDate(date, toDate) {
     do {
         dateRange.push(getYmdDate(_fromDate));
         _fromDate.setDate(_fromDate.getDate() + 1);
+        console.log('while', _fromDate, '==>', _toDate);
     } while (getYmdDate(_fromDate) < getYmdDate(_toDate));
+    console.log(dateRange);
 
     try {
         // multiGet() returns an array of k/v pairs which we map and parse
         // e.g.: [ ["key", "jsonValue"], ["key", "jsonValue"] ]
         const moodGroups = await AsyncStorage.multiGet(dateRange);
+        console.log(moodGroups);
         return moodGroups.map(([key, value]) => [
             key,
             value === null ? [] : JSON.parse(value)

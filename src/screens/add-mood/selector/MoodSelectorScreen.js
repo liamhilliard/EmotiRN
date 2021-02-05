@@ -21,7 +21,7 @@ export default function MoodSelectorScreen({navigation}) {
                         <MoodSelector
                             key={name}
                             feelings={feelings}
-                            icon={Icons[name]}
+                            icon={Icons[name]()}
                             onSelect={(isSelected) => {
                                 setSelectedEmotions({
                                     ...selectedEmotions,

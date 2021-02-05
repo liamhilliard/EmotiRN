@@ -5,16 +5,30 @@ import {Colors} from '../../styles';
 import {Icons} from '../../components';
 
 export default function MoodListElement({mood}) {
-    const timeString = new Date(mood.date).toLocaleTimeString();
+    const timeString = new Date(mood.date)
+        .toLocaleTimeString()
+        .replace(/:\d{2}$/, '');
 
     return (
         <View style={styles.container}>
-            <Text style={styles.time}>{timeString}</Text>
-            <Text style={styles.description}>{mood.description}</Text>
+            {/* <Text style={styles.description}>{mood.description}</Text> */}
             <View style={styles.emotions}>
                 {Mood.EMOTIONS.filter(({id}) => mood.emotions.includes(id)).map(
-                    ({name}) => Icons[name]
+                    ({name}) => (
+                        <View style={styles.emotionIcon} key={name}>
+                            {Icons[name](25)}
+                        </View>
+                    )
                 )}
+            </View>
+
+            <Text style={styles.time}>{timeString}</Text>
+ 
+            <View style={styles.textContainer}>
+                <Text>Description</Text>
+                <Text>{mood.description}</Text>
+                <Text>Cause</Text>
+                <Text>{mood.cause}</Text>
             </View>
         </View>
     );
@@ -39,5 +53,8 @@ const styles = StyleSheet.create({
     emotions: {
         flex: 1,
         flexDirection: 'row'
+    },
+    emotionIcon: {
+        padding: 2
     }
 });

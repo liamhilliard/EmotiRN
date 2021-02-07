@@ -11,50 +11,64 @@ export default function MoodListElement({mood}) {
 
     return (
         <View style={styles.container}>
-            {/* <Text style={styles.description}>{mood.description}</Text> */}
-            <View style={styles.emotions}>
-                {Mood.EMOTIONS.filter(({id}) => mood.emotions.includes(id)).map(
-                    ({name}) => (
+            <View style={styles.header}>
+                <Text style={styles.time}>{timeString}</Text>
+                <View style={styles.emotions}>
+                    {Mood.EMOTIONS.filter(({id}) =>
+                        mood.emotions.includes(id)
+                    ).map(({name}) => (
                         <View style={styles.emotionIcon} key={name}>
                             {Icons[name](25)}
                         </View>
-                    )
-                )}
+                    ))}
+                </View>
             </View>
-
-            <Text style={styles.time}>{timeString}</Text>
- 
-            <View style={styles.textContainer}>
-                <Text>Description</Text>
-                <Text>{mood.description}</Text>
-                <Text>Cause</Text>
-                <Text>{mood.cause}</Text>
-            </View>
+            <Text style={styles.textTitle}>Description</Text>
+            <Text style={styles.textBody}>{mood.description}</Text>
+            <Text style={styles.textTitle}>Cause</Text>
+            <Text style={styles.textBody}>{mood.cause}</Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Colors.backgroundAlt,
-        marginVertical: 5,
-        borderRadius: 20,
-        padding: 10,
-        paddingHorizontal: 15
+        marginTop: 10,
+        borderBottomWidth: 3,
+        borderBottomColor: Colors.backgroundAlt
+    },
+    header: {
+        flex: 1,
+        paddingTop: 10,
+        paddingHorizontal: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     time: {
         fontFamily: 'Nunito-Bold',
-        color: Colors.text,
-        fontSize: 16
-    },
-    description: {
-
+        fontSize: 20,
+        color: Colors.text
     },
     emotions: {
-        flex: 1,
         flexDirection: 'row'
     },
     emotionIcon: {
-        padding: 2
+        paddingStart: 6
+    },
+    textTitle: {
+        fontFamily: 'Nunito-Bold',
+        fontSize: 15,
+        color: Colors.text,
+        marginVertical: 5,
+        paddingHorizontal: 10,
+        // paddingStart: 30
+    },
+    textBody: {
+        fontFamily: 'Nunito-SemiBold',
+        fontSize: 15,
+        color: Colors.text,
+        marginBottom: 10,
+        paddingHorizontal: 10,
+        // paddingStart: 30
     }
 });

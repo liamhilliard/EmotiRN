@@ -16,12 +16,17 @@ export default function MoodList({moods, date}) {
 
 const styles = StyleSheet.create({
     container: {
+        marginTop: 40,
+        marginBottom: 10
     },
     date: {
-        fontFamily: 'Nunito-SemiBold',
-        color: Colors.text,
+        fontFamily: 'Nunito-Bold',
         fontSize: 19,
-        margin: 10
+        color: Colors.text,
+        backgroundColor: Colors.backgroundAlt,
+        padding: 5,
+        borderRadius: 5,
+        paddingStart: 10
     }
 });
 

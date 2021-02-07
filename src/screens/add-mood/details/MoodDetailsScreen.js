@@ -20,7 +20,7 @@ export default function MoodDetailsScreen({navigation, route}) {
                     {Mood.EMOTIONS.map(({name}) => {
                         return (
                             <View style={styles.emotionsCol} key={name}>
-                                {Icons[name]}
+                                {Icons[name]()}
                                 <View style={styles.emotionSelect}>
                                     <FontAwesomeIcon
                                         color={Colors.secondary}

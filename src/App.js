@@ -4,10 +4,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {AddMoodScreen} from './screens/add-mood';
 import {ViewMoodsScreen} from './screens/view-moods';
-import {DashboardScreen} from './screens/dashboard';
 import {Colors} from './styles';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faChartBar, faList, faPlusCircle, faFile} from '@fortawesome/free-solid-svg-icons';
+import {faList, faPlusCircle, faFile} from '@fortawesome/free-solid-svg-icons';
 
 StatusBar.setBackgroundColor(Colors.secondaryAlt);
 
@@ -20,7 +19,6 @@ export default function App() {
                 tabBarOptions={tabBarOptions}
                 screenOptions={screenOptions}
                 initialRouteName={routes.addMood.name}>
-                <Tab.Screen name={routes.dashboard.name} component={routes.dashboard.screen} />
                 <Tab.Screen name={routes.addMood.name} component={routes.addMood.screen} />
                 <Tab.Screen name={routes.viewMoods.name} component={routes.viewMoods.screen} />
             </Tab.Navigator>
@@ -44,9 +42,6 @@ const screenOptions = ({route}) => ({
     tabBarIcon: ({color}) => {
         let icon;
         switch (route.name) {
-            case routes.dashboard.name:
-                icon = faChartBar;
-                break;
             case routes.addMood.name:
                 icon = faPlusCircle;
                 break;
@@ -64,6 +59,5 @@ const screenOptions = ({route}) => ({
 
 const routes = {
     addMood: {name: 'AddMood', screen: AddMoodScreen},
-    viewMoods: {name: 'ViewMoods', screen: ViewMoodsScreen},
-    dashboard: {name: 'Dashboard', screen: DashboardScreen}
+    viewMoods: {name: 'ViewMoods', screen: ViewMoodsScreen}
 };

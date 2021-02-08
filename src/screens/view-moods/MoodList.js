@@ -6,10 +6,14 @@ import {Colors} from '../../styles';
 export default function MoodList({moods, date}) {
     return (
         <View style={styles.container}>
-            <Text style={styles.date}>{formatDate(date)}</Text>
-            {moods.map((mood) => (
-                <MoodListElement key={mood.date} mood={mood} />
-            ))}
+            <View style={styles.date}>
+                <Text style={styles.dateText}>{formatDate(date)}</Text>
+            </View>
+            <View style={styles.moodList}>
+                {moods.map((mood) => (
+                    <MoodListElement key={mood.date} mood={mood} />
+                ))}
+            </View>
         </View>
     );
 }
@@ -20,13 +24,15 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     date: {
-        fontFamily: 'Nunito-Bold',
-        fontSize: 19,
-        color: Colors.text,
         backgroundColor: Colors.backgroundAlt,
         padding: 5,
         borderRadius: 5,
         paddingStart: 10
+    },
+    dateText: {
+        fontFamily: 'Nunito-Bold',
+        fontSize: 19,
+        color: Colors.text
     }
 });
 

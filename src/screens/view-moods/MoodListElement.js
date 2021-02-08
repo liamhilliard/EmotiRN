@@ -50,25 +50,26 @@ const styles = StyleSheet.create({
         color: Colors.text
     },
     emotions: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        backgroundColor: Colors.backgroundAlt,
+        padding: 6,
+        borderRadius: 50
     },
     emotionIcon: {
-        paddingStart: 6
+        paddingHorizontal: 3
     },
     textTitle: {
         fontFamily: 'Nunito-Bold',
         fontSize: 15,
         color: Colors.text,
-        marginVertical: 5,
-        paddingHorizontal: 10,
-        // paddingStart: 30
+        marginBottom: 5,
+        paddingHorizontal: 10
     },
     textBody: {
         fontFamily: 'Nunito-SemiBold',
         fontSize: 15,
         color: Colors.text,
         marginBottom: 10,
-        paddingHorizontal: 10,
-        // paddingStart: 30
+        paddingHorizontal: 10
     }
 });
